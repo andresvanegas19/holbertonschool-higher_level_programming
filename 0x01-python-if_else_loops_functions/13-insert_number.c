@@ -12,7 +12,7 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *pHead, *newNode;
 
-	if (number == 0 || !(*head))
+	if (number <= 0 || !(*head))
 	{
 		newNode = insert_begging(head, number);
 		return (newNode);

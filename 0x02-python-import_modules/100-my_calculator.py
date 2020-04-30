@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import calculator_1 as cal
+from calculator_1 import add, sub, mul, div
 import sys as s
 
 if __name__ == '__main__':
@@ -8,16 +8,16 @@ if __name__ == '__main__':
         op1 = int(s.argv[1])
         op2 = int(s.argv[3])
         if (operators[0] is s.argv[2]):
-            print('{:d} + {:d} = {:d}'.format(op1, op2, cal.add(op1, op2)))
+            print('{:d} + {:d} = {:d}'.format(op1, op2, add(op1, op2)))
         if (operators[1] is s.argv[2]):
-            print('{:d} - {:d} = {:d}'.format(op1, op2, cal.sub(op1, op2)))
+            print('{:d} - {:d} = {:d}'.format(op1, op2, sub(op1, op2)))
         if (operators[2] is s.argv[2]):
-            print('{:d} * {:d} = {:d}'.format(op1, op2, cal.mul(op1, op2)))
+            print('{:d} * {:d} = {:d}'.format(op1, op2, mul(op1, op2)))
         if (operators[3] is s.argv[2]):
-            print('{:d} / {:d} = {:d}'.format(op1, op2, cal.div(op1, op2)))
+            print('{:d} / {:d} = {:d}'.format(op1, op2, div(op1, op2)))
     else:
         if (len(s.argv) is 4):
             print('Unknown operator. Available operators: +, -, * and /')
         else:
-            print('Usage: ./100-my_calculator.py <a> <operator> <b>')
+            print('Usage: {} <a> <operator> <b>'.format(s.argv[0]))
         exit(1)

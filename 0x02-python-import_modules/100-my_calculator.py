@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-import sys as s
 
 if __name__ == '__main__':
+    from calculator_1 import add, sub, mul, div
+    import sys as s
     operators = '+-*/'
     if (len(s.argv) is 4 and (s.argv[2] in operators)):
         op1 = int(s.argv[1])

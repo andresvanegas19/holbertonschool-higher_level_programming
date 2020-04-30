@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import sys as s
 
 if __name__ == '__main__':
     total = 0
     for num in s.argv[1:]:
-        total = total + int(num)
+        total =+ int(num)
     print('{:d}'.format(total))

@@ -7,35 +7,35 @@
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *copyHead = *head, *pHead = *head;
-    dlistint_t *headdouble, *tail;
-    int palindromo = 0, size = 0;
+	listint_t *copyHead = *head, *pHead = *head;
+	dlistint_t *headdouble, *tail;
+	int palindromo = 0, size = 0;
 
-    if (*head == NULL)
-        return (1);
+	if (*head == NULL)
+		return (1);
 
-    headdouble = NULL;
-    while (copyHead)
-    {
-        tail = add_dnodeint_end(&headdouble, copyHead->n);
-        copyHead = copyHead->next;
-        size++;
-    }
-    while (pHead && tail)
-    {
-        if (pHead->n == tail->n)
-            palindromo++;
-        pHead = pHead->next;
-        tail = tail->prev;
-    }
-    if (size == palindromo)
-    {
-        free_dlistint(headdouble);
-        return (1);
-    }
+	headdouble = NULL;
+	while (copyHead)
+	{
+		tail = add_dnodeint_end(&headdouble, copyHead->n);
+		copyHead = copyHead->next;
+		size++;
+	}
+	while (pHead && tail)
+	{
+		if (pHead->n == tail->n)
+			palindromo++;
+		pHead = pHead->next;
+		tail = tail->prev;
+	}
+	if (size == palindromo)
+	{
+		free_dlistint(headdouble);
+		return (1);
+	}
 
-    free_dlistint(headdouble);
-    return (0);
+	free_dlistint(headdouble);
+	return (0);
 }
 
 /**

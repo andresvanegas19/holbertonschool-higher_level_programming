@@ -14,9 +14,9 @@
  */
 typedef struct dlistint_s
 {
-    int n;
-    struct dlistint_s *prev;
-    struct dlistint_s *next;
+	int n;
+	struct dlistint_s *prev;
+	struct dlistint_s *next;
 } dlistint_t;
 
 /**
@@ -29,8 +29,8 @@ typedef struct dlistint_s
  */
 typedef struct listint_s
 {
-    int n;
-    struct listint_s *next;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);

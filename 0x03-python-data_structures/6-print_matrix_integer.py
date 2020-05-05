@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
         for num in lista:
             i += 1
             if (i <= len(lista) - 1):
-                print("{} ".format(num), end="")
+                print("{:d} ".format(num), end="")
             else:
-                print("{}".format(num), end="")
+                print("{:d}".format(num), end="")
         print()

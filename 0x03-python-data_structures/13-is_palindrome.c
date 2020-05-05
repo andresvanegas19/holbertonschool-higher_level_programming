@@ -2,8 +2,9 @@
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
- * @h: pointer to head of list
- * Return: number of nodes
+ * @head: pointer to head of list
+ *
+ * Return: 1 if is palindormo otherwise not print
  */
 int is_palindrome(listint_t **head)
 {

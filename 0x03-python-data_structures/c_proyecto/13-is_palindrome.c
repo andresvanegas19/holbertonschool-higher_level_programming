@@ -2,7 +2,7 @@
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
- * @h: pointer to head of list
+ * @head: pointer to head of list
  * Return: number of nodes
  */
 int is_palindrome(listint_t **head)
@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
     headdouble = NULL;
     while (copyHead)
     {
-        tail = add_dnodeint_end(&headdouble, copyHead->n);
+        tail = add_dnodeint(&headdouble, copyHead->n);
         copyHead = copyHead->next;
         size++;
     }
@@ -39,19 +39,20 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
- * @head: double pointer to the double linked list
- * @n: is the int into the node
+ * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
+ * @head: is the double linked list
+ * @n: is the content of the node
  *
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *tailHead = *head, *newNode;
+	dlistint_t *newNode = *head;
 
 	newNode = malloc(sizeof(dlistint_t));
 	if (newNode == NULL)
 		return (NULL);
+
 	newNode->next = NULL, newNode->prev = NULL;
 	newNode->n = n;
 
@@ -61,17 +62,13 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (*head);
 	}
 
-	for (; tailHead; tailHead = tailHead->next)
-	{
-		if (tailHead->next == NULL)
-		{
-			newNode->prev = tailHead;
-			tailHead->next = newNode;
-			return  (newNode);
-		}
-	}
-	return (NULL);
+	newNode->next = *head;
+	*head = newNode;
+	newNode->next->prev = newNode;
+
+	return (newNode);
 }
+
 
 
 /**

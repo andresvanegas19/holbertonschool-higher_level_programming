@@ -33,7 +33,7 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 size_t print_listint(const listint_t *h);
 listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_dlistint(dlistint_t *head);

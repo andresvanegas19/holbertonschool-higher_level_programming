@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    numa_one = numa_two = numb_one = numb_two = 0
-    if (len(tuple_a) >= 2):
-        numa_one, numa_two = tuple_a
-    if (len(tuple_b) >= 2):
-        numb_one, numb_two = tuple_b
+    try:
+        tupa1 = tuple_a[0]
+    except:
+        tupa1 = 0
+    try:
+        tupb1 = tuple_b[0]
+    except:
+        tupb1 = 0
 
-    print(str(numa_one) + " " + str(numb_one))
-    print(str(numa_two) + " " + str(numb_two))
-    new_tuple = (numa_one + numb_one, numa_two + numb_two)
-    return (new_tuple)
+    try:
+        tupa2 = tuple_a[1]
+    except:
+        tupa2 = 0
+    try:
+        tupb2 = tuple_b[1]
+    except:
+        tupb2 = 0
 
-tuple_a = (.)
-tuple_b = (88, 11)
-
-try:
-    a = tuple_a[0]
-except:
-    a =  0
+    return ((tupa1 + tupb1, tupa2 + tupb2))

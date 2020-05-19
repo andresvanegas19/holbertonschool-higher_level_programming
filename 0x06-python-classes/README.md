@@ -1,5 +1,5 @@
 # OOP in PYTHON
-##General
+## General
 + What is OOP
 + “first-class everything”
 + What is a class

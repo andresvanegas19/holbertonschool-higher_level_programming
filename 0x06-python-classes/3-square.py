@@ -14,15 +14,18 @@ class Square:
         """
         self.__size = size
 
+
     @property
-    def validate_num(self):
+    def size(self):
         return self.__size
 
-    @validate_num.setter
-    def validate_num(self, size):
-        if isinstance(size, int):
-            self.__size = size
-        elif size < 0:
-            raise ValueError('size must be an integer')
+    @size.setter
+    def size(self, value):
+        """ Method for validated is a number"""
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
         else:
-            raise TypeError('size must be >= 0')
+            raise TypeError("size must be an integer")

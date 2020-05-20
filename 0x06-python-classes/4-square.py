@@ -16,9 +16,6 @@ class Square:
         """
         self.size = size
 
-    def area(self):
-        return self.__size ** 2
-
     @property
     def size(self):
         """str: Is the size of the square"""
@@ -34,3 +31,10 @@ class Square:
                 self.__size = value
         else:
             raise TypeError("size must be an integer")
+
+    def area(self):
+        """
+        is for return the square of the value into the structure
+        :return: int the double of value
+        """
+        return self.__size ** 2

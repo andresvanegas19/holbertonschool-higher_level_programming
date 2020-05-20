@@ -69,6 +69,6 @@ class Square:
             for _ in range(self.__size):
                 print('#', end='')
             print(end='\n')
-        if self.__size < self.__position[1]:
-            for _ in range(self.__position[1] - self.__size):
-                print(end='\n')
+        # if self.__size < self.__position[1]:
+        #    for _ in range(self.__position[1] - self.__size):
+        #        print(end='\n')

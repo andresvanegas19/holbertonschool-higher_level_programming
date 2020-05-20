@@ -6,6 +6,7 @@ class Square:
     """
     Class that contain a size of the square
     """
+
     def __init__(self, size=0, position=(0, 0)):
         """ __init__ method.
                 The __init__ method may be documented in either the class level
@@ -26,7 +27,7 @@ class Square:
     def position(self, value):
         """str: Is the size of the square"""
         if not isinstance(value, tuple) or len(value) is not 2 \
-            or not isinstance(value[0], int) or not isinstance(value[1], int) \
+                or not isinstance(value[0], int) or not isinstance(value[1], int) \
                 or value[0] < 0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
@@ -68,6 +69,6 @@ class Square:
             for _ in range(self.__size):
                 print('#', end='')
             print(end='\n')
-        if self.__size < self.__position[1]:
-            for _ in range(self.__position[1] - self.__size):
-                print(end='\n')
+        # if self.__size < self.__position[1]:
+        # for _ in range(self.__position[1] - self.__size):
+        # print(end='\n')

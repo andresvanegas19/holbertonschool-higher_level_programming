@@ -1,0 +1,84 @@
+# 0-add_integer.txt
+===============================
+ Test divides all elements of a matrix.
+===============================
+
+Numbers
+=======
+
+``matrix_divided(matrix, div)`` returns the product of its arguments.
+if it fails it will raise a error.
+
+::
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+----> Down is for validateed the array it will no change
+
+    >>> normal_matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 102)
+    [[0.01, 0.02, 0.03], [0.04, 0.05, 0.06]]
+    >>> normal_matrix
+    [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided([[4, 2, 3], [5, 6, 6]], -2)
+    [[-2.0, -1.0, -1.5], [-2.5, -3.0, -3.0]]
+
+
+------> Down is for validated if they contented an array of arrays
+
+    >>> matrix_normal = [
+    ... (1, 2, 3),
+    ... [7, 8.1, 9]
+    ... ]
+    >>> matrix_divided(matrix_normal, 22)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+------> Down is for validated if is an array
+
+    >>> matrix_type = (
+    ... (1, 2, 3),
+    ... [7, 8.1, 9]
+    ... )
+    >>> matrix_divided(matrix_type, 22)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+------> Down is for validated if they contented af the arrays of array content numbers
+
+    >>> matrix_error = [
+    ... [4, 'Python', 3],
+    ... [7, 'is', 9],
+    ... [7, 'cool', 9]
+    ... ]
+    >>> matrix_divided(matrix_error, 10)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+------> Down is for validated the size of the matrix
+
+    >>> matrix_size2 = [
+    ... [0, 1, 0, 1],
+    ... [0, 1, 0],
+    ... [0, 1, 0, 1]
+    ... ]
+    >>> matrix_divided(matrix_size2, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_size = [
+    ... [0, 1, 0],
+    ... [0, 1, 0],
+    ... [0, 1, 0]
+    ... ]
+    >>> matrix_divided(matrix_size, 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+
+

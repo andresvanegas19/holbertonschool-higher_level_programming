@@ -1,0 +1,37 @@
+# 0-add_integer.txt
+===============================
+ Test for add two numbers to the function
+===============================
+
+Numbers
+=======
+
+``add_integer()`` returns the product of its arguments.  For numbers,
+that value is equivalent to using the ``*`` operator.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+    >>> add_integer(2.0, 10)
+    12
+    >>> add_integer(1)
+    99
+    >>> add_integer(-99)
+    -1
+    >>> add_integer(0.1, 0.1)
+    0
+    >>> add_integer(-123, -23)
+    -146
+
+Non-Numbers
+===========
+
+This is works only form
+
+::
+
+    >>> add_integer("Hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer

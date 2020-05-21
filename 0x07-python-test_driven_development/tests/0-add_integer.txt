@@ -28,10 +28,32 @@ that value is equivalent to using the ``*`` operator.
 Non-Numbers
 ===========
 
-This is works only form
-
+This is works only for not type of numbers
+the... is for wait whatever error throught and the last is the kind of
+error it will raise
 ::
 
-    >>> add_integer("Hello")
+    >>> add_integer(100, "test")
     Traceback (most recent call last):
+    ...
     TypeError: b must be an integer
+
+    >>> add_integer("test")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer("test", 10)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer([], "test")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+
+
+

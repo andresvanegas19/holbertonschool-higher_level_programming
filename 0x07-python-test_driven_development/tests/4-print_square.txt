@@ -1,0 +1,46 @@
+# 3-say_my_name.txt
+===============================
+    Test for the name
+===============================
+
+STRING
+====================================================
+
+``say_my_name(first_name, last_name="")`` prints the name
+of the two variables, if it fails raise a type error
+
+♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️♿️
+::
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(0)
+
+    >>> print_square('Hello World')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(-2.1)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square((1,2))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(6)
+    ######
+    ######
+    ######
+    ######
+    ######
+    ######
+
+    >>> print_square(-6)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0

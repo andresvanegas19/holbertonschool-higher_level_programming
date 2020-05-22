@@ -1,0 +1,43 @@
+# 3-say_my_name.txt
+===============================
+    Test the numpy function
+===============================
+
+STRING
+====================================================
+
+``matrix_mul(first_name, last_name="")`` prints a text with spaces
+ if it fails raise a type error
+
+::
+
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+
+    >>> lazy_matrix_mul("test")
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+    >>> lazy_matrix_mul([[1, 2], [1, 2]], 'Hello')
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list
+
+    >>> lazy_matrix_mul('Hello', [[1, 2], [1, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+    >>> lazy_matrix_mul([[], []], [[1, 2], [1, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a can't be empty
+
+    >>> lazy_matrix_mul([[1, 2], [1, 2]], [[], []])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b can't be empty

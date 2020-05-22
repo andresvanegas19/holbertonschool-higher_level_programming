@@ -1,0 +1,47 @@
+# 3-say_my_name.txt
+===============================
+    Test for the text inside
+===============================
+
+STRING
+====================================================
+
+``say_my_name(first_name, last_name="")`` prints a text with spaces
+ if it fails raise a type error
+
+☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞☞
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> word = 'c'
+    >>> text_indentation(word)
+    c
+
+    >>> text_indentation(" ") # doctest: +NORMALIZE_WHITESPACE
+
+    >>> text_indentation(20)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation('.?:') # doctest: +NORMALIZE_WHITESPACE
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+
+    # doctest: +NORMALIZE_WHITESPACE
+    >>> hello = 'Hola.Como.Estas.tas.'
+    >>> text_indentation(hello)
+    Hola.
+    <BLANKLINE>
+    Como.
+    <BLANKLINE>
+    Estas.
+    <BLANKLINE>
+    tas.
+    <BLANKLINE>

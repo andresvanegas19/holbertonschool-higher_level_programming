@@ -1,0 +1,83 @@
+# 3-say_my_name.txt
+===============================
+    Test the numpy function
+===============================
+
+STRING
+====================================================
+
+``lazy_matrix_mul(first_name, last_name="")`` prints a text with spaces
+ if it fails raise a type error
+
+::
+
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+    >>> lazy_matrix_mul("test")
+    Traceback (most recent call last):
+    ...
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+    >>> lazy_matrix_mul([[], []], [[], []])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (2,0) and (2,0) not aligned: 0 (dim 1) != 2 (dim 0)
+
+    >>> lazy_matrix_mul([[[1, 2], [1, 2]], [[], []])
+    []
+
+    >>> lazy_matrix_mul([['hello ', 2], [1, 2]], [['How', 'are'], [1, 2]])
+    Traceback (most recent call last):
+    ...
+    ValueError: data type must provide an itemsize
+
+
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 'Holberton']])
+    Traceback (most recent call last):
+    ...
+    ValueError: data type must provide an itemsize
+
+    >>> lazy_matrix_mul([[1, 2]], None)
+    Traceback (most recent call last):
+    ...
+    TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+
+    >>> a = [
+    ...         [3, 4],
+    ...         [5, 6],
+    ...         [7, 8],
+    ...         [9, 10]
+    ...     ]
+    >>> lazy_matrix_mul([[1, 2]], a)
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (2,2) and (4,2) not aligned: 2 (dim 1) != 4 (dim 0)
+
+    >>> lazy_matrix_mul(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
+
+    >>> lazy_matrix_mul([1, 2], [1, 2])
+    5
+
+    >>> lazy_matrix_mul([1, 2], [1, 'Gola'])
+    Traceback (most recent call last):
+    ...
+    ValueError: data type must provide an itemsize
+
+    >>> lazy_matrix_mul([1, [1, 2]], [3434.2, 1.2])
+    Traceback (most recent call last):
+    ...
+    ValueError: setting an array element with a sequence.
+
+    >>> lazy_matrix_mul([1, 2.2, 2.3, 23.23], [3434.2, 1.2])
+    Traceback (most recent call last):
+    ...
+    ValueError: shapes (4,) and (2,) not aligned: 4 (dim 0) != 2 (dim 0)
+
+    >>> lazy_matrix_mul([1.2312, 2.2], [3434.2, 1.2])
+    Traceback (most recent call last):
+    ...
+    4230.82704

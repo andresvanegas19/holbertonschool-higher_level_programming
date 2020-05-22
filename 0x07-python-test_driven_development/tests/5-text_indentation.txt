@@ -33,6 +33,15 @@ STRING
     :
     <BLANKLINE>
 
+    >>> prueba = '$$$?$$$:$$$.$$$'
+    >>> text_indentation(prueba)
+    $$$?
+    <BLANKLINE>
+    $$$:
+    <BLANKLINE>
+    $$$.
+    <BLANKLINE>
+    $$$
 
     # doctest: +NORMALIZE_WHITESPACE
     >>> hello = 'Hola.Como.Estas.tas.'

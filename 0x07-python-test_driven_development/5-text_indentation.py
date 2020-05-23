@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """Script to contain a function prints with new space
 Attributes:
     text_indentation(str): it print a new string

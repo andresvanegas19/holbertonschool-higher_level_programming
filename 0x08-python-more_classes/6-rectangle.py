@@ -8,7 +8,6 @@ class Rectangle:
 
     number_of_instances = 0
 
-
     # Instantiation with optional width and height
     def __init__(self, width=0, height=0):
         self.width = width
@@ -67,7 +66,7 @@ class Rectangle:
         result = ''
         for high in range(self.__height):
             for long in range(self.__width):
-                result = result + Rectangle.print_symbol
+                result = result + '#'
             if high is not self.__height - 1:
                 result = result + '\n'
 

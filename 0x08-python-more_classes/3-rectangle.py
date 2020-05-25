@@ -60,5 +60,11 @@ class Rectangle:
     def __str__(self):
         if self.__width is 0 or self.__height is 0:
             return ''
+        result = ''
+        for high in range(self.__height):
+            for long in range(self.__width):
+                result = result + '#'
+            if high is not self.__height - 1:
+                result = result + '\n'
 
-        return '###\n###\n###'
+        return result

@@ -64,10 +64,11 @@ class Rectangle:
     def __str__(self):
         if self.__width is 0 or self.__height is 0:
             return ''
+        self.print_symbol = str(self.print_symbol)
         result = ''
         for high in range(self.__height):
             for long in range(self.__width):
-                result = result + Rectangle.print_symbol
+                result = result + self.print_symbol
             if high is not self.__height - 1:
                 result = result + '\n'
 

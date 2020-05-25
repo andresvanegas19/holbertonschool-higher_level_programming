@@ -76,4 +76,5 @@ class Rectangle:
         """
         This method return a string with a information to the developer
         :return: a string more information"""
-        return 'Rectangle(' + str(self.__height) + ', ' + str(self.__width) + ')'
+        return 'Rectangle(' + str(self.__height) + ', '\
+               + str(self.__width) + ')'

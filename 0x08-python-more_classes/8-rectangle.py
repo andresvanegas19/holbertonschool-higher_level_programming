@@ -64,10 +64,11 @@ class Rectangle:
     def __str__(self):
         if self.__width is 0 or self.__height is 0:
             return ''
+        self.print_symbol = str(self.print_symbol)
         result = ''
         for high in range(self.__height):
             for long in range(self.__width):
-                result = result + Rectangle.print_symbol
+                result = result + self.print_symbol
             if high is not self.__height - 1:
                 result = result + '\n'
 
@@ -80,4 +81,16 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError('rect_1 must be an instance of Rectangle')
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError('rect_2 must be an instance of Rectangle')
+        rec1 = len(str(rect_1))
+        rec2 = len(str(rect_2))
 
+        if rec1 is rec2 or rec1 > rec2:
+            return rect_1
+        if rec2 > rec1:
+            return rect_2

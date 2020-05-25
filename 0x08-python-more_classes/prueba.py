@@ -3,17 +3,20 @@
 
 
 class Rectangle:
-    print_symbol = '#'
+    @staticmethod
+    def hola(mino, mino2):
+        print(type(mino))
+        print(type(Rectangle))
 
-    def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+class Pt:
+    pass
 
-    def __str__(self):
-        return selfs.print_symbol
+p = Rectangle()
+a = Pt()
 
+if not isinstance(a, Rectangle):
+    print('passaaaaa')
 
-my_rectangle_1 = Rectangle(8, 4)
-my_rectangle_1.print_symbol = "&"
-print(my_rectangle_1.print_symbol)
-print(my_rectangle_1)
+Rectangle.hola(p, 'H')
+
+print(type(Rectangle))

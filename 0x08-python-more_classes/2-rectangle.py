@@ -47,6 +47,7 @@ class Rectangle:
         :return the area of the square"""
         return self.__width * self.__height
 
+    # Public instance method
     def perimeter(self):
         """ Calculate the perimeter of a square
         :return the perimeter"""

@@ -58,6 +58,10 @@ class Rectangle:
     # print() and str() should print the rectangle with the character
     # if width or height is equal to 0, return an empty string
     def __str__(self):
+        """
+        This method return a string with a perfect rectangle
+        :return: a string with jump file
+        """
         if self.__width is 0 or self.__height is 0:
             return ''
         result = ''

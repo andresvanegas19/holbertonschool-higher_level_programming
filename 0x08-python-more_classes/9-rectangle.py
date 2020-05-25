@@ -62,6 +62,10 @@ class Rectangle:
     # print() and str() should print the rectangle with the character
     # if width or height is equal to 0, return an empty string
     def __str__(self):
+        """
+        This method return a string with a perfect rectangle
+        with certain string
+        :return: a string with jump file"""
         if self.__width is 0 or self.__height is 0:
             return ''
         self.print_symbol = str(self.print_symbol)
@@ -75,14 +79,21 @@ class Rectangle:
         return result
 
     def __repr__(self):
+        """
+        This method return a string with a information to the developer
+        :return: a string more information"""
         return 'Rectangle(' + str(self.__height) + ', ' + str(self.__width) + ')'
 
     def __del__(self):
+        """This method delete the class"""
         Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """this evaluated which attribute is most bigger
+        :return the attribute much bigger
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
         if not isinstance(rect_2, Rectangle):
@@ -97,6 +108,9 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """this method call again the class to reajustar el size
+        :return the new class with the much bigger size or other
+        """
         if not isinstance(size, int):
             return Rectangle(0, 0)
         return Rectangle(size, size)

@@ -13,13 +13,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """ This is for get the value
+        """This is for get the value
         :return return the private value"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ This will check the value if is a int otherwise raise error"""
+        """This will check the value if is a int otherwise raise error"""
         if not type(value) is int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -28,7 +28,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ This is for get the value
+        """This is for get the value
         :return return the private value"""
         return self.__width
 
@@ -43,7 +43,7 @@ class Rectangle:
 
     # Public instance method
     def area(self):
-        """ calculate the area
+        """calculate the area
         :return the area of the square"""
         return self.__width * self.__height
 

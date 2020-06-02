@@ -10,6 +10,3 @@ class MyList(list):
         """print the list of the inherent class
         in oreder"""
         print(sorted([a for a in super().__iter__()]))
-
-
-

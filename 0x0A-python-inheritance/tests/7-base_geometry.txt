@@ -1,0 +1,40 @@
+
+Initialized the test for method of the class 😯😯😯😯😯😯
+-------------------------------------------------------------
+
+Declare the class to extract
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+    >>> bg.integer_validator("my_int", 12)
+    12
+    >>> bg.integer_validator("width", 89)
+    89
+    >>> bg.integer_validator(1, 89)
+    89
+
+
+❌❌❌❌❌❌❌❌❌❌ Traceback ❌❌❌❌❌❌❌❌❌❌❌❌❌
+    #float
+    >>> bg.integer_validator(1, 89.1)
+    Traceback (most recent call last):
+    ...
+    Exception: 1 must be an integer
+
+    # negative first
+    >>> bg.integer_validator("width", -89)
+    Traceback (most recent call last):
+    ...
+    Exception: width must be greater than 0
+
+    # 0 number
+    >>> bg.integer_validator("width", 0)
+    Traceback (most recent call last):
+    ...
+    Exception: width must be greater than 0
+
+    # string
+    bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    Exception: name must be an integer

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Test if the object is inherent of a class"""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry

@@ -10,4 +10,11 @@ class LockedClass:
 
     def __init__(self, value):
         self.first_name = value
+
         self.__freeze()
+
+
+
+sds = LockedClass(hola)
+
+sds.feo = '1qweqda'

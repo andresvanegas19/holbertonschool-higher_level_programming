@@ -8,8 +8,8 @@ class Rectangle(BaseGeometry):
     """ is a class that it seems to be a rectangle"""
 
     def __init__(self, width, height):
-        self.__width = integer_validator("width", width)
-        self.__height = integer_validator("height", height)
+        self.__width = super().integer_validator("width", width)
+        self.__height = super().integer_validator("height", height)
 
     def area(self):
         """functio that return the are of a rectangle"""

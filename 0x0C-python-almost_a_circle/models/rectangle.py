@@ -4,12 +4,22 @@ from models.base import Base
 
 
 class Rectangle(Base):
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.__width = self.evaluated(width, 'width')
+        self.__height = self.evaluated(height, 'height')
+        self.__x = self.evaluated(x, 'x')
+        self.__y = self.evaluated(y, 'y')
+
+    @staticmethod
+    def evaluated(value, name):
+        """ This will check the value if is a int otherwise raise error"""
+        if not type(value) is int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value < 0:
+            raise ValueError('{} must be >= 0'.format(name))
+        return value
 
     @property
     def width(self):
@@ -20,10 +30,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ This will check the value if is a int otherwise raise error"""
-        if not type(value) is int:
-            raise TypeError('width must be an integer')
-        if value < 0:
-            raise ValueError('width must be >= 0')
+        self.evaluated(value, 'width')
         self.__width = value
 
     @property
@@ -35,10 +42,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ This will check the value if is a int otherwise raise error"""
-        if not type(value) is int:
-            raise TypeError('height must be an integer')
-        if value < 0:
-            raise ValueError('height must be >= 0')
+        self.evaluated(value, 'height')
         self.__height = value
 
     @property
@@ -49,10 +53,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ This will check the value if is a int otherwise raise error"""
-        if not type(value) is int:
-            raise TypeError('x must be an integer')
-        if value < 0:
-            raise ValueError('x must be >= 0')
+        self.evaluated(value, 'x')
         self.__x = value
 
     @property
@@ -63,10 +64,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ This will check the value if is a int otherwise raise error"""
-        if not type(value) is int:
-            raise TypeError('y must be an integer')
-        if value < 0:
-            raise ValueError('y must be >= 0')
+        self.evaluated(value, 'y')
         self.__y = value
 
     def area(self):
@@ -86,7 +84,7 @@ class Rectangle(Base):
                 print('#', end='')
             print('\n', end='')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""
         a = [self.id, self.__width, self.__height, self.__x, self.__y]
         for num in range(len(args)):

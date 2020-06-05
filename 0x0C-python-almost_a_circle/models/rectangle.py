@@ -80,10 +80,15 @@ class Rectangle(Base):
 
     # [Rectangle] (<id>) <x>/<y> - <width>/<height>
     def display(self):
+        """This print a rectangle"""
         for _ in range(self.__width):
             for _ in range(self.__height):
                 print('#', end='')
             print('\n', end='')
 
     def update(self, *args):
-        self.id, self.__width, self.__height, self.__x, self.__y = args
+        """that assigns an argument to each attribute and update it"""
+        a = [self.id, self.__width, self.__height, self.__x, self.__y]
+        for num in range(len(args)):
+            a[num] = args[num]
+        self.id, self.__width, self.__height, self.__x, self.__y = a

@@ -81,7 +81,6 @@ class Rectangle(Base):
         """This print a rectangle"""
         for _ in range(self.__y):
             print(end='\n')
-
         for _ in range(self.__height):
             spaces = ''.join(' ' for _ in range(self.__x))
             char = ''.join('#' for _ in range(self.__width))

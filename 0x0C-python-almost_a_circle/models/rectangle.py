@@ -79,10 +79,13 @@ class Rectangle(Base):
     # [Rectangle] (<id>) <x>/<y> - <width>/<height>
     def display(self):
         """This print a rectangle"""
-        for _ in range(self.__width):
-            for _ in range(self.__height):
-                print('#', end='')
-            print('\n', end='')
+        for _ in range(self.__y):
+            print(end='\n')
+
+        for _ in range(self.__height):
+            spaces = ''.join(' ' for _ in range(self.__x))
+            char = ''.join('#' for _ in range(self.__width))
+            print('{}{}'.format(spaces, char))
 
     def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""

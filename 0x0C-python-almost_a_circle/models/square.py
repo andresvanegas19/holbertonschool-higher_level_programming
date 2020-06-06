@@ -39,3 +39,6 @@ class Square(Rectangle):
                     a[err.index(key)] = val
         # to unpacking the variables and save it
         self.id, self.size, self.x, self.y = a
+
+    def to_dictionary(self):
+        return {'id': self.id, 'size':self._size, 'x': self.x, 'y': self.y}

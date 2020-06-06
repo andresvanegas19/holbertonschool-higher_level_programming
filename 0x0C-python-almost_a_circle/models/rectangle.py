@@ -102,3 +102,7 @@ class Rectangle(Base):
         # to unpacking the variables and save it
         self.id, self.__width, self.__height, self.__x, self.__y = a
 
+    def to_dictionary(self):
+        return {'id': self.id, 'width': self.__width,
+                'height': self.__height, 'x': self.__x, 'y': self.__y}
+

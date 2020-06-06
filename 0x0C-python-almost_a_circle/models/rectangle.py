@@ -87,6 +87,16 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""
         a = [self.id, self.__width, self.__height, self.__x, self.__y]
-        for num in range(len(args)):
-            a[num] = args[num]
+        err = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for num in range(len(args)):
+                self.evaluated(args[num], err[num])
+                a[num] = args[num]
+        else:
+            for key, val in kwargs.items():
+                self.evaluated(val, key)
+                if key in err:
+                    a[err.index(key)] = val
+        # to unpacking the variables and save it
         self.id, self.__width, self.__height, self.__x, self.__y = a
+

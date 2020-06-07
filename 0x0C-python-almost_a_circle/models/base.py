@@ -2,6 +2,7 @@
 """This class will be the “base” of all other classes in this project.
 The goal of it is to manage id attribute in all your future classes
 and to avoid duplicating the same code (by extension, same bugs)"""
+from models.rectangle import Rectangle
 import json
 
 
@@ -44,3 +45,9 @@ class Base:
             return json.loads(json_string)
         return []
 
+    @classmethod
+    def create(cls, **dictionary):
+        """To use the update method to assign all attributes, you must
+        create a “dummy” instance before"""
+        dummy = Rectangle(89, 2, 3, 4, 5)
+        dummy.update(**dictionary)

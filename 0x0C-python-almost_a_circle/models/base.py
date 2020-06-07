@@ -2,10 +2,11 @@
 """This class will be the “base” of all other classes in this project.
 The goal of it is to manage id attribute in all your future classes
 and to avoid duplicating the same code (by extension, same bugs)"""
-import json
-import models.rectangle as rect
-from os import path
 import csv
+import json
+from os import path
+
+import models.rectangle as rect
 
 
 class Base:
@@ -27,13 +28,19 @@ class Base:
             return json.dumps(list_dictionaries)
         return '[]'
 
+    @staticmethod
+    def dict_return(list_objs):
+        """ this function it will recive adress of classes
+        :return the dictionary of those"""
+        return [list_objs[i].to_dictionary()
+                for i in range(len(list_objs))]
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file
         list_objs is a list of instances who inherits of Base"""
         # is a list of objects
-        real = [list_objs[i].to_dictionary()
-                for i in range(len(list_objs))]
+        real = cls.dict_return(list_objs)
         # open the file and write into it
         with open(cls.__name__ + '.json', 'w') as flJson:
             flJson.write(cls.to_json_string(real))
@@ -71,8 +78,38 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        pass
+        if not path.exists(cls.__name__ + '.json'):
+            return
+        real = cls.dict_return(list_objs)
+        with open(cls.__name__ + '.csv', 'w+') as flCsv:
+            # Opens the file so you can write it down
+            writer = csv.writer(flCsv)
+            try:
+                # We tell him that the keys are going to make our columns
+                writer.writerow(real[0].keys())
+            except Exception as e:
+                return
+            for row in real:
+                # Here we fill it with the rows
+                writer.writerow(row.values())
+
 
     @classmethod
     def load_from_file_csv(cls):
-        pass
+        """This will load a csv file and become into json"""
+        if not path.exists(cls.__name__ + '.json'):
+            return []
+        with open(cls.__name__ + '.csv') as fl:
+            # Can't be done with the reader function
+            # because it returns normal csv, it has to be manipulated with
+            # Dict Readers
+            inst = []
+            for input_dict in csv.DictReader(fl):
+                # load the file into dict
+                real = json.loads(json.dumps(input_dict))
+                # this is for become whole values into int
+                for key, val in real.items():
+                    real[key] = int(val)
+                inst. append(cls.create(**real))
+            return inst
+

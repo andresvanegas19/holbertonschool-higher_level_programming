@@ -34,3 +34,13 @@ class Base:
         # open the file and write into it
         with open(cls.__name__ + '.json', 'w') as flJson:
             flJson.write(cls.to_json_string(real))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """that returns the list of the JSON string representation
+        json_string"""
+        if json_string:
+            # loads for read jsons
+            return json.loads(json_string)
+        return []
+

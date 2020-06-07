@@ -6,7 +6,7 @@ import csv
 import json
 from os import path
 
-import models.rectangle as rect
+
 
 
 class Base:
@@ -58,7 +58,7 @@ class Base:
     def create(cls, **dictionary):
         """To use the update method to assign all attributes, you must
         create a “dummy” instance before"""
-        dummy = rect.Rectangle(0, 1, 0, 1, 1)
+        dummy = cls(1, 2)
         dummy.update(**dictionary)
         return dummy
 
@@ -92,7 +92,6 @@ class Base:
             for row in real:
                 # Here we fill it with the rows
                 writer.writerow(row.values())
-
 
     @classmethod
     def load_from_file_csv(cls):

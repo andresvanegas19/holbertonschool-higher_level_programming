@@ -31,7 +31,6 @@ class Base:
         # is a list of objects
         real = [list_objs[i].to_dictionary()
                 for i in range(len(list_objs))]
-        print(real)
+        # open the file and write into it
         with open(cls.__name__ + '.json', 'w') as flJson:
-            json.dump('[1, 2, 3]', flJson)
-
+            flJson.write(cls.to_json_string(real))

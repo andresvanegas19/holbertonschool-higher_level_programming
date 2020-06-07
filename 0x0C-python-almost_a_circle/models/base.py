@@ -39,7 +39,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """that returns the list of the JSON string representation
-        json_string"""
+        json_string, that returns a list of instances"""
         if json_string:
             # loads for read jsons
             return json.loads(json_string)
@@ -61,6 +61,9 @@ class Base:
         with open(cls.__name__ + '.json', 'r') as flJson:
             # try to read the first character if is not possible
             # it will return False
-            # a = (cls.to_json_string(flJson))
-            print(cls.from_json_string(flJson.read()))
+            instance = []
+            a = cls.from_json_string(flJson.read())
+            for values in a:
+                instance.append(cls.create(**values))
+            return instance
 

@@ -5,8 +5,7 @@ and to avoid duplicating the same code (by extension, same bugs)"""
 import csv
 import json
 from os import path
-
-
+import turtle
 
 
 class Base:
@@ -112,3 +111,5 @@ class Base:
                 inst. append(cls.create(**real))
             return inst
 
+    def draw(list_rectangles, list_squares):
+        pass

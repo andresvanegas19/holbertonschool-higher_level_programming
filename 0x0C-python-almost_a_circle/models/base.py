@@ -5,6 +5,8 @@ and to avoid duplicating the same code (by extension, same bugs)"""
 import json
 import models.rectangle as rect
 from os import path
+import csv
+
 
 class Base:
     """This will be the base of everything"""
@@ -61,9 +63,16 @@ class Base:
         with open(cls.__name__ + '.json', 'r') as flJson:
             # try to read the first character if is not possible
             # it will return False
-            instance = []
+            inst = []
             a = cls.from_json_string(flJson.read())
             for values in a:
-                instance.append(cls.create(**values))
-            return instance
+                inst.append(cls.create(**values))
+            return inst
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        pass

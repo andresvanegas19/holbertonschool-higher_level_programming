@@ -4,7 +4,7 @@ The goal of it is to manage id attribute in all your future classes
 and to avoid duplicating the same code (by extension, same bugs)"""
 import json
 import models.rectangle as rect
-
+from os import path
 
 class Base:
     """This will be the base of everything"""
@@ -52,4 +52,15 @@ class Base:
         dummy = rect.Rectangle(0, 1, 0, 1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """:returns a list of instances"""
+        if not path.exists(cls.__name__ + '.json'):
+            return []
+        with open(cls.__name__ + '.json', 'r') as flJson:
+            # try to read the first character if is not possible
+            # it will return False
+            # a = (cls.to_json_string(flJson))
+            print(cls.from_json_string(flJson.read()))
 

@@ -15,6 +15,19 @@ class Rectangle(Base):
     @staticmethod
     def evaluated(value, name):
         """ This will check the value if is a int otherwise raise error"""
+        val = ['x', 'y']
+        if not type(value) is int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value < 0:
+            if name in val:
+                raise ValueError('{} must be >= 0'.format(name))
+            else:
+                raise ValueError('{} must be > 0'.format(name))
+        return value
+
+    @staticmethod
+    def evaluatedXY(value, name):
+        """ This will check the value if is a int otherwise raise error"""
         if not type(value) is int:
             raise TypeError('{} must be an integer'.format(name))
         if value < 0:

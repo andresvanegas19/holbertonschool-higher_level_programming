@@ -5,7 +5,6 @@ and to avoid duplicating the same code (by extension, same bugs)"""
 import csv
 import json
 from os import path
-import turtle
 
 
 class Base:
@@ -13,11 +12,11 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if id:
-            self.id = id
-        else:
+        if not id or id < 0:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):

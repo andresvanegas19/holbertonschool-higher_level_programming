@@ -6,6 +6,7 @@ from models.base import Base
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """this is for start the variables"""
         super().__init__(id)
         self.__width = self.evaluated(width, 'width')
         self.__height = self.evaluated(height, 'height')
@@ -90,6 +91,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def __str__(self):
+        """this is for start the variables"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 

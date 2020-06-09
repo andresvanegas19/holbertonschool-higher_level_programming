@@ -12,6 +12,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """this is for start the variables"""
         if not id or id < 0:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -80,6 +81,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """to save files"""
         real = cls.dict_return(list_objs)
         with open(cls.__name__ + '.csv', 'w') as flCsv:
             # Opens the file so you can write it down
@@ -111,6 +113,3 @@ class Base:
                     real[key] = int(val)
                 inst. append(cls.create(**real))
             return inst
-
-    def draw(list_rectangles, list_squares):
-        pass

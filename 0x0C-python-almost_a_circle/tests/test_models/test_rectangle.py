@@ -302,12 +302,14 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs(self):
         """This will test the class rectangle"""
         self.r1.update(x=1, height=2, y=3, width=4)
-        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 1/3 - 4/2'.format(self.r1.id))
+        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 1/3 - 4/2'
+                      .format(self.r1.id))
 
     def test_kwargs1(self):
         """This will test the class rectangle"""
         self.r1.update(height=2)
-        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 10/10 - 10/2'.format(self.r1.id))
+        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 10/10 - 10/2'
+                      .format(self.r1.id))
 
     def test_kwargs2(self):
         """This will test the class rectangle"""
@@ -326,4 +328,5 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs4(self):
         """This will test the class rectangle"""
         self.r1.update(**self.rDict)
-        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 1/9 - 10/2'.format(self.r1.id))
+        self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 1/9 - 10/2'
+                      .format(self.r1.id))

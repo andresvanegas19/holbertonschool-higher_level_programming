@@ -69,38 +69,47 @@ class TestBaseClass(unittest.TestCase):
         self.assertGreaterEqual(Square(5).area(), 25)
 
     def test_errSq(self):
+        """This will test the class rectangle"""
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
             Square(5).size = -1
 
     def test_errSq1(self):
+        """This will test the class rectangle"""
         with self.assertRaisesRegex(TypeError, 'width must be an integer'):
             Square(5).size = 'Hi'
 
     def test_update(self):
+        """This will test the class rectangle"""
         self.s1.update(10)
         self.assertIn(self.s1.__str__(), '[Square] (10) 0/0 - 404')
 
     def test_update1(self):
+        """This will test the class rectangle"""
         self.s1.update(1, 2)
         self.assertIn(self.s1.__str__(), '[Square] (1) 0/0 - 2')
 
     def test_update2(self):
+        """This will test the class rectangle"""
         self.s1.update(89, 2, 3)
         self.assertIn(self.s1.__str__(), '[Square] (89) 3/0 - 2')
 
     def test_update3(self):
+        """This will test the class rectangle"""
         self.s1.update(1, 2, 3, 4)
         self.assertIn(self.s1.__str__(), '[Square] (1) 3/4 - 2')
 
     def test_update4(self):
+        """This will test the class rectangle"""
         self.s1.update(x=12)
         self.assertIn(self.s1.__str__(), '[Square] (308) 12/0 - 404')
 
     def test_update5(self):
+        """This will test the class rectangle"""
         self.s1.update(size=7, id=89, y=1, x=1)
         self.assertIn(self.s1.__str__(), '[Square] (89) 1/1 - 7')
 
     def test_update6(self):
+        """This will test the class rectangle"""
         s1_dictionary = self.s1.to_dictionary()
         self.s1.update(**s1_dictionary)
         self.assertIn(self.s1.__str__(), '[Square] (89) 1/1 - 7')

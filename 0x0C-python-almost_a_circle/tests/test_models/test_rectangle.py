@@ -64,6 +64,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Rectangle(1, 1, 0, 0, 5).id, 5)
 
     def test_rectangle6(self):
+        """This will test the class rectangle"""
         self.assertEqual(Rectangle(1, 1, 0, 1, 5).id, 5)
 
     def test_rectagleErrors1(self):
@@ -73,58 +74,72 @@ class TestBaseClass(unittest.TestCase):
             Rectangle(10, 2, 0, 4, 5, 5)
 
     def test_rectagleErrors2(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(None)
 
     def test_rectagleErrors3(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(1.1, 1.2, 1.3)
 
     def test_rectagleErrors4(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3])
 
     def test_rectagleErrors5(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle()
 
     def test_rectagleErrors6(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(None, 5)
 
     def test_rectagleErrors7(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(set())
 
     def test_rectagleErrors8(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(())
 
     def test_rectagleErrors9(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle({})
 
     def test_rectagleErrors10(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(1, 1, None, None)
 
     def test_rectagleErrors11(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 2, 0, 'Hi', 5)
 
     def test_rectagleErrors12(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(0, 2, 0, 1, 5)
 
     def test_rectagleErrors13(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5)
 
     def test_searchError(self):
+        """This will test the class rectangle"""
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
             Rectangle(0, 1)
 
     def test_searchError1(self):
+        """This will test the class rectangle"""
         with self.assertRaisesRegex(ValueError, 'height must be > 0'):
             Rectangle(1, 0)
 
@@ -136,142 +151,178 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue('height must be > 0' in str(err.exception))
 
     def test_Errmsg1(self):
+        """This will test the class rectangle"""
         # This is for check the error message
         with self.assertRaises(TypeError) as err:
             Rectangle(10, "Hello, World!")
         self.assertTrue('height must be an integer' in str(err.exception))
 
     def test_Errmsg2(self):
+        """This will test the class rectangle"""
         with self.assertRaises(TypeError) as err:
             Rectangle("Hello, World!", 10)
         self.assertTrue('width must be an integer' in str(err.exception))
 
     def test_Errmsg3(self):
+        """This will test the class rectangle"""
         with self.assertRaises(ValueError) as err:
             r = Rectangle(10, 2)
             r.width = -10
         self.assertTrue('width must be > 0' in str(err.exception))
 
     def test_Errmsg4(self):
+        """This will test the class rectangle"""
         with self.assertRaises(TypeError) as err:
             r = Rectangle(10, 2)
             r.x = {}
         self.assertTrue('x must be an integer' in str(err.exception))
 
     def test_Errmsg5(self):
+        """This will test the class rectangle"""
         with self.assertRaises(ValueError) as err:
             Rectangle(10, 2, 3, -1)
         self.assertTrue('y must be >= 0' in str(err.exception))
 
     def test_calcArea(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.ar, 6)
 
     def test_calcArea1(self):
+        """This will test the class rectangle"""
         self.assertEqual(Rectangle(2, 10).area(), 20)
 
     def test_calcArea2(self):
+        """This will test the class rectangle"""
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
     def test_errArea(self):
+        """This will test the class rectangle"""
         with self.assertRaisesRegex(TypeError, 'height must be an integer'):
             Rectangle(12, {}, 0, 0, 12).area()
 
     def test_errArea1(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).area('Hello')
 
     def test_errArea2(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).area(1.1)
 
     def test_magic_str(self):
+        """This will test the class rectangle"""
         self.assertIn(Rectangle(4, 6, 2, 1, 12).__str__(),
                       '[Rectangle] (12) 2/1 - 4/6')
 
     def test_magic_str1(self):
+        """This will test the class rectangle"""
         self.assertIn(Rectangle(10, 10, 2, 1, 12).__str__(),
                       '[Rectangle] (12) 2/1 - 10/10')
 
     def test_magic_str2(self):
+        """This will test the class rectangle"""
         self.assertIn(Rectangle(10, 12).__str__(),
                       '[Rectangle] (148) 0/0 - 10/12')
 
     def test_magic_str3(self):
+        """This will test the class rectangle"""
         self.assertIn(Rectangle(1, 2, 0, 0).__str__(),
                       '[Rectangle] (157) 0/0 - 1/2')
 
     def test_displayBasic(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.case1, self.guide1)
 
     def test_displayBasic1(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.case2, self.guide2)
 
     def test_displayBasic2(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.case3, self.guide3_5)
 
     def test_displayBasic3(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.case4, self.guide4)
 
     def test_displayBasic4(self):
+        """This will test the class rectangle"""
         self.assertEqual(self.case5, self.guide6)
 
     def test_update(self):
+        """This will test the class rectangle"""
         self.r1.update(89)
         self.assertIn(self.r1.__str__(), '[Rectangle] (89) 10/10 - 10/10')
 
     def test_update2(self):
+        """This will test the class rectangle"""
         self.r1.update(89, 2)
         self.assertIn(self.r1.__str__(), '[Rectangle] (89) 10/10 - 2/10')
 
     def test_update3(self):
+        """This will test the class rectangle"""
         self.r1.update(89, 2, 3)
         self.assertIn(self.r1.__str__(), '[Rectangle] (89) 10/10 - 2/3')
 
     def test_update4(self):
+        """This will test the class rectangle"""
         self.r1.update(89, 2, 3, 4)
         self.assertIn(self.r1.__str__(), '[Rectangle] (89) 4/10 - 2/3')
 
     def test_update5(self):
+        """This will test the class rectangle"""
         self.r1.update(89, 2, 3, 4, 5)
         self.assertIn(self.r1.__str__(), '[Rectangle] (89) 4/5 - 2/3')
 
     def test_updateNormal(self):
+        """This will test the class rectangle"""
         self.assertIsNone(Rectangle(1, 1).update())
 
     def test_updateErr(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).update(1, -1)
 
     def test_updateErr1(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).update(1, -1, {})
 
     def test_updateErr2(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).update(1, 12, 3, (1, 2, 3))
 
     def test_updateErr3(self):
+        """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5).update(1, 2, 3, 4, "Hello")
 
     def test_kwargs(self):
+        """This will test the class rectangle"""
         self.r1.update(x=1, height=2, y=3, width=4)
         self.assertIn(self.r1.__str__(), '[Rectangle] (98) 1/3 - 4/2')
 
     def test_kwargs1(self):
+        """This will test the class rectangle"""
         self.r1.update(height=2)
         self.assertIn(self.r1.__str__(), '[Rectangle] (106) 10/10 - 10/2')
 
     def test_kwargs2(self):
+        """This will test the class rectangle"""
         self.assertIsNone(self.r1.update())
 
     def test_kwargs3(self):
+        """This will test the class rectangle"""
         self.assertIsNone(Rectangle(2, 3, 2, 2)
                           .update(peso=4, altura=1, equis=1, ye=2))
 
     def test_valDict(self):
+        """This will test the class rectangle"""
         self.assertDictEqual(self.rect.to_dictionary(), self.rDict)
 
     def test_kwargs4(self):
+        """This will test the class rectangle"""
         self.r1.update(**self.rDict)
         self.assertIn(self.r1.__str__(), '[Rectangle] (274) 1/9 - 10/2')

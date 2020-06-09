@@ -91,7 +91,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def __str__(self):
-        """this is for start the variables"""
+        """this is for return a string"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 

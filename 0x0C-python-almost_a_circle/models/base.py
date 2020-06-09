@@ -59,8 +59,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """To use the update method to assign all attributes, you must
-        create a “dummy” instance before"""
+        """that returns the list of the JSON string representation
+        json_string, that returns a list of instances"""
         dummy = cls(1, 2)
         dummy.update(**dictionary)
         return dummy

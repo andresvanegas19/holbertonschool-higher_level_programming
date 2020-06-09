@@ -9,6 +9,7 @@ from models.square import Square
 
 class TestBaseClass(unittest.TestCase):
     """This will test the class base"""
+
     def setUp(self) -> None:
         """This will set all variables in each
         test to improve writting code"""
@@ -24,7 +25,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_id1(self):
         """this will test the id attribute5"""
-        self.assertEqual(Base(5,).id, 5)
+        self.assertEqual(Base(5, ).id, 5)
 
     def test_id4(self):
         """this will test the id attribute2"""
@@ -76,8 +77,7 @@ class TestBaseClass(unittest.TestCase):
         """check the erros in the id"""
         list_input = [
             {'id': 89, 'width': 10, 'height': 4},
-            {'id': 7, 'width': 1, 'height': 7}
-        ]
+            {'id': 7, 'width': 1, 'height': 7}]
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertTrue(type(list_output) is list)
@@ -98,6 +98,7 @@ class TestBaseClass(unittest.TestCase):
     def test_loadsFiles(self):
         """This function test the created method"""
         class Falsee(Base):
+            """function do nothing"""
             pass
         list_rectangles_output = Falsee.load_from_file()
         self.assertEqual(list_rectangles_output, [])
@@ -120,7 +121,6 @@ class TestBaseClass(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file_csv()
         for rect in list_rectangles_input:
             self.assertTrue(isinstance(rect, object))
-
         for rect in list_rectangles_output:
             self.assertTrue(isinstance(rect, object))
 
@@ -129,13 +129,9 @@ class TestBaseClass(unittest.TestCase):
         s1 = Square(5)
         s2 = Square(7, 9, 1)
         list_squares_input = [s1, s2]
-
         Square.save_to_file_csv(list_squares_input)
-
         list_squares_output = Square.load_from_file_csv()
-
         for square in list_squares_input:
             self.assertTrue(type(square.__str__()) is str)
-
         for square in list_squares_output:
             self.assertTrue(type(square.__str__()) is str)

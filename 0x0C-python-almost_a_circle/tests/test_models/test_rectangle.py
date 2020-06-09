@@ -73,7 +73,7 @@ class TestBaseClass(unittest.TestCase):
     def test_rectagleErrors2(self):
         """This will test the class rectangle"""
         with self.assertRaises(Exception):
-            Rectangle(None)
+            Rectangle(None, 2)
 
     def test_rectagleErrors3(self):
         """This will test the class rectangle"""

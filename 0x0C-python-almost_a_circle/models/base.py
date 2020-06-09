@@ -38,6 +38,10 @@ class Base:
         """writes the JSON string representation of list_objs to a file
         list_objs is a list of instances who inherits of Base"""
         # is a list of objects
+        if not list_objs:
+            with open(cls.__name__ + '.json', 'w') as flJson:
+                flJson.write('[]')
+                return
         real = cls.dict_return(list_objs)
         # open the file and write into it
         with open(cls.__name__ + '.json', 'w') as flJson:

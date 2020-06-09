@@ -12,10 +12,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """a basic getter"""
         return self._size
 
     @size.setter
     def size(self, value):
+        """a basic setter"""
         super().evaluated(value, 'width')
         self._size = value
 
@@ -41,4 +43,5 @@ class Square(Rectangle):
         self.id, self.size, self.x, self.y = a
 
     def to_dictionary(self):
+        """it will make a dictionary with keys"""
         return {'id': self.id, 'size': self._size, 'x': self.x, 'y': self.y}

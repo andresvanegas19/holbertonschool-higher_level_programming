@@ -26,11 +26,11 @@ class TestBaseClass(unittest.TestCase):
 
     def test_id2(self):
         """this will test the id attribute4"""
-        self.assertEqual(self.base.id, 1)
+        self.assertEqual(self.base.id, 14)
 
     def test_id3(self):
         """this will test the id attribute3"""
-        self.assertEqual(Base(-10).id, 2)
+        self.assertEqual(Base(-10).id, 16)
 
     def test_id4(self):
         """this will test the id attribute2"""
@@ -59,16 +59,6 @@ class TestBaseClass(unittest.TestCase):
         """check the erros in the id"""
         with self.assertRaises(TypeError):
             Base.to_json_string()
-
-    def test_jsonStr3(self):
-        """check the erros in the id"""
-        with self.assertRaises(TypeError):
-            Base.to_json_string(set())
-
-    def test_jsonStr4(self):
-        """check the erros in the id"""
-        with self.assertRaises(TypeError):
-            Base.to_json_string({1: 'Hola', 2: 'Hola x2'})
 
     def test_save(self):
         """this will test the id attribute"""
@@ -113,7 +103,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_loadsFiles(self):
         """This function test the created method"""
-        class Falsee:
+        class Falsee(Base):
             pass
         list_rectangles_output = Falsee.load_from_file()
         self.assertEqual(list_rectangles_output, [])
@@ -138,7 +128,7 @@ class TestBaseClass(unittest.TestCase):
             self.assertTrue(isinstance(rect, object))
 
         for rect in list_rectangles_output:
-            self.assertEqual(isinstance(rect, object))
+            self.assertTrue(isinstance(rect, object))
 
     def test_csvLoad1(self):
         """this will test the id attribute"""

@@ -17,7 +17,7 @@ class TestBaseClass(unittest.TestCase):
         # different areas
         self.ar = Rectangle(3, 2).area()
         self.rect = Rectangle(10, 2, 1, 9)
-        self.rDict = {'x': 1, 'y': 9, 'id': 274, 'height': 2, 'width': 10}
+        self.rDict = {'x': 1, 'y': 9, 'id': 523, 'height': 2, 'width': 10}
         self.guide1 = "##\n  ##\n  ##"
         self.guide2 = '##\n  ##\n  ##\n ###\n ###'
         self.guide3_5 = '##\n  ##\n  ##\n ###\n ###\n#'
@@ -223,12 +223,12 @@ class TestBaseClass(unittest.TestCase):
     def test_magic_str2(self):
         """This will test the class rectangle"""
         self.assertIn(Rectangle(10, 12).__str__(),
-                      '[Rectangle] (148) 0/0 - 10/12')
+                      '[Rectangle] (245) 0/0 - 10/12')
 
     def test_magic_str3(self):
         """This will test the class rectangle"""
         self.assertIn(Rectangle(1, 2, 0, 0).__str__(),
-                      '[Rectangle] (157) 0/0 - 1/2')
+                      '[Rectangle] (254) 0/0 - 1/2')
 
     def test_displayBasic(self):
         """This will test the class rectangle"""
@@ -302,12 +302,12 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs(self):
         """This will test the class rectangle"""
         self.r1.update(x=1, height=2, y=3, width=4)
-        self.assertIn(self.r1.__str__(), '[Rectangle] (98) 1/3 - 4/2')
+        self.assertIn(self.r1.__str__(), '[Rectangle] (187) 1/3 - 4/2')
 
     def test_kwargs1(self):
         """This will test the class rectangle"""
         self.r1.update(height=2)
-        self.assertIn(self.r1.__str__(), '[Rectangle] (106) 10/10 - 10/2')
+        self.assertIn(self.r1.__str__(), '[Rectangle] (195) 10/10 - 10/2')
 
     def test_kwargs2(self):
         """This will test the class rectangle"""
@@ -325,4 +325,4 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs4(self):
         """This will test the class rectangle"""
         self.r1.update(**self.rDict)
-        self.assertIn(self.r1.__str__(), '[Rectangle] (274) 1/9 - 10/2')
+        self.assertIn(self.r1.__str__(), '[Rectangle] (523) 1/9 - 10/2')

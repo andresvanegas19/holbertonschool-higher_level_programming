@@ -12,8 +12,11 @@ class TestBaseClass(unittest.TestCase):
     def setUp(self) -> None:
         """This will set all variables in each
         test to improve writting code"""
-        self.base = Base(None)
         self.r1Json = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+
+    def test_id3(self):
+        """this will test the id attribute3"""
+        self.assertEqual(Base(None).id, 9)
 
     def test_id(self):
         """this will test the id attribute"""
@@ -22,14 +25,6 @@ class TestBaseClass(unittest.TestCase):
     def test_id1(self):
         """this will test the id attribute5"""
         self.assertEqual(Base(5,).id, 5)
-
-    def test_id2(self):
-        """this will test the id attribute4"""
-        self.assertEqual(self.base.id, 14)
-
-    def test_id3(self):
-        """this will test the id attribute3"""
-        self.assertEqual(Base(-10).id, 16)
 
     def test_id4(self):
         """this will test the id attribute2"""

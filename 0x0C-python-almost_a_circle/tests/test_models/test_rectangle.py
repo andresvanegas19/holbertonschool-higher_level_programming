@@ -16,6 +16,8 @@ class TestBaseClass(unittest.TestCase):
         test to improve writting code"""
         # different areas
         self.ar = Rectangle(3, 2).area()
+        self.rect = Rectangle(10, 2, 1, 9)
+        self.rDict = {'x': 1, 'y': 9, 'id': 274, 'height': 2, 'width': 10}
         self.guide1 = "##\n  ##\n  ##"
         self.guide2 = '##\n  ##\n  ##\n ###\n ###'
         self.guide3_5 = '##\n  ##\n  ##\n ###\n ###\n#'
@@ -140,11 +142,11 @@ class TestBaseClass(unittest.TestCase):
 
     def test_magic_str2(self):
         self.assertIn(Rectangle(10, 12).__str__(),
-                      '[Rectangle] (131) 0/0 - 10/12')
+                      '[Rectangle] (148) 0/0 - 10/12')
 
     def test_magic_str3(self):
         self.assertIn(Rectangle(1, 2, 0, 0).__str__(),
-                      '[Rectangle] (139) 0/0 - 1/2')
+                      '[Rectangle] (157) 0/0 - 1/2')
 
     def test_displayBasic(self):
         self.assertEqual(self.case1, self.guide1)
@@ -202,11 +204,11 @@ class TestBaseClass(unittest.TestCase):
 
     def test_kwargs(self):
         self.r1.update(x=1, height=2, y=3, width=4)
-        self.assertIn(self.r1.__str__(), '[Rectangle] (87) 1/3 - 4/2')
+        self.assertIn(self.r1.__str__(), '[Rectangle] (98) 1/3 - 4/2')
 
     def test_kwargs1(self):
         self.r1.update(height=2)
-        self.assertIn(self.r1.__str__(), '[Rectangle] (94) 10/10 - 10/2')
+        self.assertIn(self.r1.__str__(), '[Rectangle] (106) 10/10 - 10/2')
 
     def test_kwargs2(self):
         self.assertIsNone(self.r1.update())
@@ -214,3 +216,10 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs3(self):
         self.assertIsNone(Rectangle(2, 3, 2, 2)
                           .update(peso=4, altura=1, equis=1, ye=2))
+
+    def test_valDict(self):
+        self.assertDictEqual(self.rect.to_dictionary(), self.rDict)
+
+    def test_kwargs4(self):
+        self.r1.update(**self.rDict)
+        self.assertIn(self.r1.__str__(), '[Rectangle] (274) 1/9 - 10/2')

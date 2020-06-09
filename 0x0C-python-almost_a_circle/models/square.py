@@ -5,7 +5,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """ a kinf of figure but it has another specifics"""
-    # def __init__(self, width, height, x=0, y=0, id=None):
+
     def __init__(self, size, x=0, y=0, id=None):
         """this is for start the variables"""
         super().__init__(size, size, x, y, id)

@@ -4,7 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-
+    """This will a iritante of Base and contain some usefull funtions"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """this is for start the variables"""
         super().__init__(id)
@@ -94,7 +94,6 @@ class Rectangle(Base):
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-    # [Rectangle] (<id>) <x>/<y> - <width>/<height>
     def display(self):
         """This print a rectangle"""
         for _ in range(self.__y):

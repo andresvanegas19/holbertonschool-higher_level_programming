@@ -76,10 +76,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        if not path.exists(cls.__name__ + '.json'):
-            return
         real = cls.dict_return(list_objs)
-        with open(cls.__name__ + '.csv', 'w+') as flCsv:
+        with open(cls.__name__ + '.csv', 'w') as flCsv:
             # Opens the file so you can write it down
             writer = csv.writer(flCsv)
             try:

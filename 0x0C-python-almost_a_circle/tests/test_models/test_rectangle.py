@@ -42,46 +42,89 @@ class TestBaseClass(unittest.TestCase):
     def test_rectangle(self):
         """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(1, 2).id, 2)
+
+    def test_rectangle1(self):
+        """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(2, 10, 3).id, 3)
+
+    def test_rectangle2(self):
+        """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(10, 2, 0, 4).id, 4)
+
+    def test_rectangle3(self):
+        """This will test the class rectangle"""
         self.assertEqual(Rectangle(10, 2, 0, 4, 5).id, 5)
+
+    def test_rectangle4(self):
+        """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(10, 2, 0, 4, None).id, 6)
+
+    def test_rectangle5(self):
+        """This will test the class rectangle"""
         self.assertEqual(Rectangle(1, 1, 0, 0, 5).id, 5)
+
+    def test_rectangle6(self):
         self.assertEqual(Rectangle(1, 1, 0, 1, 5).id, 5)
 
-    def test_rectagle_errors1(self):
+    def test_rectagleErrors1(self):
         """This will test  how manage the errors"""
         # self.assertEqual(Rectangle(1), )
         with self.assertRaises(Exception):
             Rectangle(10, 2, 0, 4, 5, 5)
+
+    def test_rectagleErrors2(self):
         with self.assertRaises(Exception):
             Rectangle(None)
+
+    def test_rectagleErrors3(self):
         with self.assertRaises(Exception):
             Rectangle(1.1, 1.2, 1.3)
+
+    def test_rectagleErrors4(self):
         with self.assertRaises(Exception):
             Rectangle([1, 2, 3], [1, 2, 3], [1, 2, 3])
+
+    def test_rectagleErrors5(self):
         with self.assertRaises(Exception):
             Rectangle()
+
+    def test_rectagleErrors6(self):
         with self.assertRaises(Exception):
             Rectangle(None, 5)
+
+    def test_rectagleErrors7(self):
         with self.assertRaises(Exception):
             Rectangle(set())
+
+    def test_rectagleErrors8(self):
         with self.assertRaises(Exception):
             Rectangle(())
+
+    def test_rectagleErrors9(self):
         with self.assertRaises(Exception):
             Rectangle({})
+
+    def test_rectagleErrors10(self):
         with self.assertRaises(Exception):
             Rectangle(1, 1, None, None)
+
+    def test_rectagleErrors11(self):
         with self.assertRaises(Exception):
             Rectangle(10, 2, 0, 'Hi', 5)
+
+    def test_rectagleErrors12(self):
         with self.assertRaises(Exception):
             Rectangle(0, 2, 0, 1, 5)
+
+    def test_rectagleErrors13(self):
         with self.assertRaises(Exception):
             Rectangle(10, 0, 0, 1, 5)
 
     def test_searchError(self):
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
             Rectangle(0, 1)
+
+    def test_searchError1(self):
         with self.assertRaisesRegex(ValueError, 'height must be > 0'):
             Rectangle(1, 0)
 
@@ -92,32 +135,41 @@ class TestBaseClass(unittest.TestCase):
             r.height = -10
         self.assertTrue('height must be > 0' in str(err.exception))
 
+    def test_Errmsg1(self):
         # This is for check the error message
         with self.assertRaises(TypeError) as err:
             Rectangle(10, "Hello, World!")
         self.assertTrue('height must be an integer' in str(err.exception))
 
+    def test_Errmsg2(self):
         with self.assertRaises(TypeError) as err:
             Rectangle("Hello, World!", 10)
         self.assertTrue('width must be an integer' in str(err.exception))
 
+    def test_Errmsg3(self):
         with self.assertRaises(ValueError) as err:
             r = Rectangle(10, 2)
             r.width = -10
         self.assertTrue('width must be > 0' in str(err.exception))
 
+    def test_Errmsg4(self):
         with self.assertRaises(TypeError) as err:
             r = Rectangle(10, 2)
             r.x = {}
         self.assertTrue('x must be an integer' in str(err.exception))
 
+    def test_Errmsg5(self):
         with self.assertRaises(ValueError) as err:
             Rectangle(10, 2, 3, -1)
         self.assertTrue('y must be >= 0' in str(err.exception))
 
     def test_calcArea(self):
         self.assertEqual(self.ar, 6)
+
+    def test_calcArea1(self):
         self.assertEqual(Rectangle(2, 10).area(), 20)
+
+    def test_calcArea2(self):
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
     def test_errArea(self):

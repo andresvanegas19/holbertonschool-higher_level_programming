@@ -8,10 +8,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """this is for start the variables"""
         super().__init__(id)
-        self.__width = self.evaluated(width, 'width')
-        self.__height = self.evaluated(height, 'height')
-        self.__x = self.evaluated(x, 'x')
-        self.__y = self.evaluated(y, 'y')
+        self.width = self.evaluated(width, 'width')
+        self.height = self.evaluated(height, 'height')
+        self.x = self.evaluated(x, 'x')
+        self.y = self.evaluated(y, 'y')
 
     @staticmethod
     def evaluated(value, name):
@@ -20,7 +20,6 @@ class Rectangle(Base):
         if not type(value) is int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
-            # valudate if the value is x and y
             if name in val:
                 if value == 0:
                     return value

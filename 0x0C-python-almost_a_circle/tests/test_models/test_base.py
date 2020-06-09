@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for the test"""
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle

@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for test the rect"""
 import unittest
-from models.base import Base
 from models.rectangle import Rectangle
 import io
 import sys
@@ -69,7 +67,6 @@ class TestBaseClass(unittest.TestCase):
 
     def test_rectagleErrors1(self):
         """This will test  how manage the errors"""
-        # self.assertEqual(Rectangle(1), )
         with self.assertRaises(Exception):
             Rectangle(10, 2, 0, 4, 5, 5)
 

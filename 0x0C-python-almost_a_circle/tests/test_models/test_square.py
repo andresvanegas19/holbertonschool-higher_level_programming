@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""Unittest for square"""
 import unittest
 from models.square import Square
 

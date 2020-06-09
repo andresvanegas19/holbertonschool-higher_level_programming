@@ -101,7 +101,7 @@ class TestBaseClass(unittest.TestCase):
     def test_update4(self):
         """This will test the class rectangle"""
         self.s1.update(x=12)
-        self.assertIn(self.s1.__str__(), '[Square] (557) 12/0 - 404')
+        self.assertIn(self.s1.__str__(), '[Square] ({}) 12/0 - 404'.format(self.s1.id))
 
     def test_update5(self):
         """This will test the class rectangle"""
@@ -112,7 +112,7 @@ class TestBaseClass(unittest.TestCase):
         """This will test the class rectangle"""
         s1_dictionary = self.s1.to_dictionary()
         self.s1.update(**s1_dictionary)
-        self.assertIn(self.s1.__str__(), '[Square] (559) 0/0 - 404')
+        self.assertIn(self.s1.__str__(), '[Square] ({}) 0/0 - 404'.format(self.s1.id))
 
     def test_updErr(self):
         """This will test the class rectangle"""

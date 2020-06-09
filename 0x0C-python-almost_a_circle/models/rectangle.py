@@ -18,9 +18,13 @@ class Rectangle(Base):
         val = ['x', 'y']
         if not type(value) is int:
             raise TypeError('{} must be an integer'.format(name))
-        if value < 0:
+        if value <= 0:
+            # valudate if the value is x and y
             if name in val:
-                raise ValueError('{} must be >= 0'.format(name))
+                if value == 0:
+                    return value
+                else:
+                    raise ValueError('{} must be >= 0'.format(name))
             else:
                 raise ValueError('{} must be > 0'.format(name))
         return value
@@ -39,12 +43,6 @@ class Rectangle(Base):
         """ This is for get the value
         :return return the private value"""
         return self.__width
-
-    @width.setter
-    def width(self, value):
-        """ This will check the value if is a int otherwise raise error"""
-        self.evaluated(value, 'width')
-        self.__width = value
 
     @property
     def height(self):
@@ -74,6 +72,12 @@ class Rectangle(Base):
         """acces to the function"""
         return self.__y
 
+    @width.setter
+    def width(self, value):
+        """ This will check the value if is a int otherwise raise error"""
+        self.evaluated(value, 'width')
+        self.__width = value
+
     @y.setter
     def y(self, value):
         """ This will check the value if is a int otherwise raise error"""
@@ -97,7 +101,9 @@ class Rectangle(Base):
         for _ in range(self.__height):
             spaces = ''.join(' ' for _ in range(self.__x))
             char = ''.join('#' for _ in range(self.__width))
+            # print('space', spaces, 'char',char)
             print('{}{}'.format(spaces, char))
+        return
 
     def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""

@@ -21,7 +21,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_id0(self):
         """this will test the id attribute"""
-        self.assertGreaterEqual(Base().id, 9)
+        self.assertGreaterEqual(Base().id, 3)
 
     def test_id(self):
         """this will test the id attribute"""

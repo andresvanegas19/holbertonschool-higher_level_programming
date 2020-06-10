@@ -9,24 +9,23 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """this is for start the variables"""
         super().__init__(size, size, x, y, id)
-        self._size = size
+
+    def __str__(self):
+        """this is for string"""
+        return '[Square] ({}) {}/{} - {}' \
+            .format(self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """a basic getter"""
-        return self._size
+        """the getter to get the value"""
+        return self.width
 
     @size.setter
     def size(self, value):
-        """a basic setter"""
-        super().evaluated(value, 'width')
-        self._size = value
-
-    def __str__(self):
-        """this is for the string"""
-        # [Square] (<id>) <x>/<y> - <size>
-        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x,
-                                                 self.y, self._size)
+        """the setter to set the value"""
+        self.evaluated(value, 'height')
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""

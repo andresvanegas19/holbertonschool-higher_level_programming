@@ -28,7 +28,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """that assigns an argument to each attribute and update it"""
-        a = [self.id, self.size, self.x, self.y]
+        a = [self.id, self.width, self.x, self.y]
         err = ['id', 'size', 'x', 'y']
         if args:
             for num in range(len(args)):
@@ -40,8 +40,8 @@ class Square(Rectangle):
                 if key in err:
                     a[err.index(key)] = val
         # to unpacking the variables and save it
-        self.id, self.size, self.x, self.y = a
+        self.id, self.width, self.x, self.y = a
 
     def to_dictionary(self):
         """it will make a dictionary with keys"""
-        return {'id': self.id, 'size': self._size, 'x': self.x, 'y': self.y}
+        return {'id': self.id, 'size': self.width, 'x': self.x, 'y': self.y}

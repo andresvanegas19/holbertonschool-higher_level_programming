@@ -48,7 +48,7 @@ class Rectangle(Base):
     def height(self):
         """ This is for get the value
         :return return the private value"""
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):

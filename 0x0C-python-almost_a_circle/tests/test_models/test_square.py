@@ -12,6 +12,10 @@ class TestBaseClass(unittest.TestCase):
         # different areas
         self.s1 = Square(404)
 
+    def test_kwargs3(self):
+        """This will test the class rectangle"""
+        self.assertGreaterEqual(Square(1, 2, 3, 4).id, 3)
+
     def test_rectangle(self):
         """This will test the class rectangle"""
         self.assertGreaterEqual(Square(1).id, 1)
@@ -26,12 +30,17 @@ class TestBaseClass(unittest.TestCase):
 
     def test_rectangle3(self):
         """This will test the class rectangle"""
-        self.assertGreaterEqual(Square(10, 2, 0, 4).id, 4)
+        self.assertEqual(Square(1, 2, 3, 4).id, 4)
 
     def test_rectErr(self):
         """This will test the class rectangle"""
         with self.assertRaises(Exception):
             Square(10, 2, 0, 4, 5, 5)
+
+    def test_rectErr0(self):
+        """This will test the class rectangle"""
+        with self.assertRaises(Exception):
+            Square(-1)
 
     def test_rectErr1(self):
         """This will test the class rectangle"""
@@ -124,3 +133,49 @@ class TestBaseClass(unittest.TestCase):
         """This will test the class rectangle"""
         with self.assertRaises(Exception):
             self.s1.update(1, 2, 'a', 4)
+
+    def test_id_err2(self):
+        """check the erros in the id"""
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+
+    def test_id_err3(self):
+        """check the erros in the id"""
+        with self.assertRaises(ValueError):
+            Square(1, 2, -2)
+
+    def test_id_err4(self):
+        """check the erros in the id"""
+        with self.assertRaises(ValueError):
+            Square(0)
+
+    def test_id_err5(self):
+        """check the erros in the id"""
+        with self.assertRaises(TypeError):
+            Square.to_dictionary()
+            Square.to_dictionary()
+
+    def test_valDict(self):
+        """This will test the class rectangle"""
+        rDict = {'id': 10, 'size': 1, 'x': 2, 'y': 3}
+        a = Square(1, 2, 3, 4)
+        rDict['id'] = a.id
+        self.assertDictEqual(a.to_dictionary(), rDict)
+
+    def test_valDict1(self):
+        """This will test the class rectangle"""
+        c = Square.create(**{'id': 89})
+        self.assertIn(c.__str__(), '[Square] ({}) 2/0 - 1'.format(c.id))
+
+    def test_valDict12(self):
+        """This will test the class rectangle"""
+        a = Square(1, 2, 3, 4)
+        self.assertIsNone(a.save_to_file(None))
+
+    def test_valDict13(self):
+        """This will test the class rectangle"""
+        self.assertEqual(Square.save_to_file([Square(1)]), None)
+
+    def test_valDict13(self):
+        """This will test the class rectangle"""
+        self.assertEqual(Square.load_from_file(), [])

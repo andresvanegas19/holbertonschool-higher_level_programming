@@ -3,7 +3,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-from os import path
+from os import (path, remove)
 from models.square import Square
 
 
@@ -17,8 +17,11 @@ class TestBaseClass(unittest.TestCase):
 
     def test_id0(self):
         """this will test the id attribute"""
-        self.assertEqual(Base().id, 9)
+        self.assertEqual(Base().id, 7)
 
+    def test_id0(self):
+        """this will test the id attribute"""
+        self.assertGreaterEqual(Base().id, 9)
 
     def test_id(self):
         """this will test the id attribute"""
@@ -113,6 +116,15 @@ class TestBaseClass(unittest.TestCase):
         list_rectangles_output = Rectangle.load_from_file()
         self.assertTrue(type(list_rectangles_output) is list)
 
+    def test_loadFiles4(self):
+        """This function test the if it a list"""
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4)
+        list_rectangles_input = [r1, r2]
+        Square.save_to_file(list_rectangles_input)
+        list_rectangles_output = Square.load_from_file()
+        self.assertTrue(type(list_rectangles_output) is list)
+
     def test_csvLoad(self):
         """this will test the id attribute"""
         r1 = Rectangle(10, 7, 2, 8)
@@ -136,3 +148,21 @@ class TestBaseClass(unittest.TestCase):
             self.assertTrue(type(square.__str__()) is str)
         for square in list_squares_output:
             self.assertTrue(type(square.__str__()) is str)
+
+    def test_save2(self):
+        """this will test the id attribute"""
+        remove('Rectangle.json')
+        Rectangle.save_to_file([])
+        self.assertTrue(path.exists('Rectangle.json'))
+
+    def test_save4(self):
+        """this will test the id attribute"""
+        remove('Square.json')
+        Square.save_to_file([])
+        self.assertTrue(path.exists('Square.json'))
+
+    def test_save5(self):
+        """this will test the id attribute"""
+        remove('Square.json')
+        Square.save_to_file([Square(1)])
+        self.assertTrue(path.exists('Square.json'))

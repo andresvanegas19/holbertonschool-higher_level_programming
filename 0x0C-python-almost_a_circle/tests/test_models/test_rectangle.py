@@ -45,6 +45,11 @@ class TestBaseClass(unittest.TestCase):
         """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(2, 10, 3).id, 3)
 
+    def test_rectangle11(self):
+        """This will test  how manage the errors"""
+        with self.assertRaises(Exception):
+            Rectangle(10, 2, -2)
+
     def test_rectangle2(self):
         """This will test the class rectangle"""
         self.assertGreaterEqual(Rectangle(10, 2, 0, 4).id, 4)
@@ -322,8 +327,29 @@ class TestBaseClass(unittest.TestCase):
         self.rDict['id'] = self.rect.id
         self.assertDictEqual(self.rect.to_dictionary(), self.rDict)
 
+    def test_sav_file(self):
+        """This will test the class rectangle"""
+        class Rectangle:
+            pass
+        with self.assertRaises(Exception):
+            Rectangle.save_to_file([])
+
+    def test_sav_file1(self):
+        """This will test the class rectangle"""
+        a = Rectangle(1, 2, 3, 4)
+        b = Rectangle(1, 2, 3, 4)
+        b.save_to_file([])
+        self.assertIsNotNone(b)
+        self.assertIsNotNone(a)
+
     def test_kwargs4(self):
         """This will test the class rectangle"""
         self.r1.update(**self.rDict)
         self.assertIn(self.r1.__str__(), '[Rectangle] ({}) 1/9 - 10/2'
                       .format(self.r1.id))
+
+    def test_kwargs4(self):
+        """This will test the class rectangle"""
+        a = Rectangle(1, 2, 3, 4)
+        a.save_to_file([])
+        self.assertGreaterEqual(a.id, 100)

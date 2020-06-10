@@ -15,6 +15,11 @@ class TestBaseClass(unittest.TestCase):
         test to improve writting code"""
         self.r1Json = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
 
+    def test_id0(self):
+        """this will test the id attribute"""
+        self.assertEqual(Base().id, 9)
+
+
     def test_id(self):
         """this will test the id attribute"""
         self.assertEqual(Base(3).id, 3)

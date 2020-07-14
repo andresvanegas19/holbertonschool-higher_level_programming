@@ -72,3 +72,7 @@ ALTER TABLE organizations
 ADD CONSTRAINT organization_unq UNIQUE(organization);
 
 
+-- Drop the right foreign key constraint
+-- Change the referential integrity behavior of a key
+ALTER TABLE affiliations
+DROP CONSTRAINT  affiliations_organization_id_fkey;

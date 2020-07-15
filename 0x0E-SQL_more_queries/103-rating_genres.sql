@@ -1,3 +1,4 @@
+--  lists all genres in the database hbtn_0d_tvshows_rate by their rating.
 SELECT genres.name, SUM(ratings.rate) AS rating
 FROM tv_show_ratings AS ratings
 JOIN tv_show_genres

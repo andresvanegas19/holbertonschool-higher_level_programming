@@ -6,8 +6,7 @@ import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
-
+if __name__ == "__main__" and len(sys.argv) == 4:
     # script should take 3 arguments: mysql username, mysql
     # password and database name
     db = MySQLdb.connect(
@@ -27,6 +26,7 @@ if __name__ == "__main__":
                 states
             ON
                 cities.state_id = states.id
+
             ORDER BY 1 LIMIT 15
             """)
         rows = cur.fetchall()
@@ -36,4 +36,3 @@ if __name__ == "__main__":
 
     # This is for close
     db.close()
-

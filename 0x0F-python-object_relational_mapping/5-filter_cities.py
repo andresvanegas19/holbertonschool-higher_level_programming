@@ -17,24 +17,23 @@ if __name__ == "__main__" and len(sys.argv) == 5:
         passwd=sys.argv[2],
         db=sys.argv[3])
 
-    # cursor.execute("SELECT admin FROM users
-    # WHERE username = %s'", (username, ));
-    # cursor.execute("SELECT admin FROM users WHERE username =
-    # %(username)s", {'username': username});
-
     with db.cursor() as cur:
-        fill = {'name': sys.argv[4]}
         cur.execute("""
-            SELECT * FROM
+            SELECT
+                DISTINCT cities.name
+            FROM
+                cities
+            JOIN
                 states
+            ON
+                cities.state_id = states.id
             WHERE
-                name = %(name)s
-            ORDER BY
-                id""", fill)
+                states.name = %(name_state)s
+            """, {'name_state': sys.argv[4]})
         rows = cur.fetchall()
-
+        result = []
         for row in rows:
-            print(row)
-
+            result.append(row[0])
+        print(', '.join(result), sep='')
     # This is for close
     db.close()

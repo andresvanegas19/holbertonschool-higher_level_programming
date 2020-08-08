@@ -16,7 +16,6 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     engine = create_engine(db_uri, pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-
     Session.configure(bind=engine)
 
     # work with the session

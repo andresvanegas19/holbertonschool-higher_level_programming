@@ -19,7 +19,7 @@ if __name__ == "__main__" and len(sys.argv) == 4:
         'database': sys.argv[3]
     }
 
-    Session = sessionmaker()
+    Session = sessionmaker(autoflush=True)
     engine = create_engine(URL(**db_uri), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
@@ -27,16 +27,20 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     session = Session()
 
     try:
-        new_state = State(name='Louisiana')
-        session.add(new_state)
-        session.commit()
-        session.flush()
-        num = new_state.id
+        session = Session()
+        states = session.query(State)\
+            .filter(State.name.like('%a%')) \
+            .all()
+
+        # for state in states:
+        # states.delete()
+        for state in states:
+            session.delete(state)
+            session.commit()
 
     except SQLAlchemyError as e:
         logger.error(e.args)
         session.rollback()
 
     finally:
-        print(num)
         session.close()

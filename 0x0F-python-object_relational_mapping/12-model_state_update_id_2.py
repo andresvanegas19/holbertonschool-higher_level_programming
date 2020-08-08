@@ -27,16 +27,17 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     session = Session()
 
     try:
-        new_state = State(name='Louisiana')
-        session.add(new_state)
+        session = Session()
+        state = session.query(State)\
+            .filter(State.id == '2').first()
+
+        state.name = 'New Mexico'
         session.commit()
         session.flush()
-        num = new_state.id
 
     except SQLAlchemyError as e:
         logger.error(e.args)
         session.rollback()
 
     finally:
-        print(num)
         session.close()

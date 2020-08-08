@@ -3,6 +3,7 @@
 """
 import sys
 from model_state import Base, State
+from model_city import City
 
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
@@ -19,24 +20,17 @@ if __name__ == "__main__" and len(sys.argv) == 4:
         'database': sys.argv[3]
     }
 
-    Session = sessionmaker()
+    Session = sessionmaker(autoflush=True)
     engine = create_engine(URL(**db_uri), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     Session.configure(bind=engine)
     session = Session()
 
-    try:
-        new_state = State(name='Louisiana')
-        session.add(new_state)
-        session.commit()
-        session.flush()
-        num = new_state.id
+    states = session.query(State.name, City.id, City.name).\
+        join(City, State.id == City.state_id).\
+        order_by(City.id).all()
 
-    except SQLAlchemyError as e:
-        logger.error(e.args)
-        session.rollback()
-
-    finally:
-        print(num)
-        session.close()
+    for state in states:
+        print('{}: ({}) {}'.format(state[0], state[1], state[2]))
+    session.close()

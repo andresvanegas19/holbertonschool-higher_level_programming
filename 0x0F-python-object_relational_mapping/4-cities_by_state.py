@@ -5,6 +5,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
 
     # script should take 3 arguments: mysql username, mysql
@@ -16,15 +17,23 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3])
 
-    cur = db.cursor()
-    query = """SELECT * FROM {}.states WHERE name = '{}' \
-        ORDER BY id""".format(sys.argv[3], sys.argv[4])
-    cur.execute(query)
-    rows = cur.fetchall()
+    with db.cursor() as cur:
+        cur.execute("""
+            SELECT
+                cities.id, cities.name, states.name
+            FROM
+                cities
+            JOIN
+                states
+            ON
+                cities.state_id = states.id
+            ORDER BY 1 LIMIT 15
+            """)
+        rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+        for row in rows:
+            print(row)
 
     # This is for close
     db.close()
-    cur.close()
+

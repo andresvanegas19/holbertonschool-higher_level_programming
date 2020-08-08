@@ -7,8 +7,8 @@ import sys
 
 
 if __name__ == "__main__":
-    # script should take 3 arguments: mysql username,
-    # mysql password and database name
+    # script should take 3 arguments: mysql username, mysql
+    # password and database name
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -17,7 +17,8 @@ if __name__ == "__main__":
         db=sys.argv[3])
 
     cur = db.cursor()
-    query = """SELECT * FROM """ + sys.argv[3] + """.states ORDER BY id"""
+    query = """SELECT * FROM """ + sys.argv[3] + \
+        """.states WHERE name LIKE 'N%' ORDER BY id"""
     cur.execute(query)
     rows = cur.fetchall()
 

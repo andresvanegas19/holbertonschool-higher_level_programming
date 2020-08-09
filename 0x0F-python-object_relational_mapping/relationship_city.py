@@ -27,6 +27,3 @@ class City(Base):
         Integer,
         ForeignKey('states.id'),
         nullable=False)
-    # # Relationships
-    # state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-    # states = relationship("State", foreign_keys=id)

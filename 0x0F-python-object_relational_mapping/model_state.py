@@ -21,4 +21,3 @@ class State(Base):
         nullable=False,
         autoincrement=True)
     name = Column('name', String(128), nullable=False)
-    cities = relationship('City', backref=backref('cities'))

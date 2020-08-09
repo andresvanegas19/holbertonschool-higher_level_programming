@@ -7,9 +7,11 @@ from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.engine.url import URL
+from sqlalchemy import exc
 
 if __name__ == "__main__" and len(sys.argv) == 4:
     # create the uri of database
+
     db_uri = {
         'drivername': 'mysql',
         'username': sys.argv[1],
@@ -32,11 +34,9 @@ if __name__ == "__main__" and len(sys.argv) == 4:
         session.commit()
         session.flush()
         num = new_state.id
-
-    except SQLAlchemyError as e:
-        logger.error(e.args)
-        session.rollback()
+        print(num)
+    except exc.SQLAlchemyError as e:
+        print(e)
 
     finally:
-        print(num)
         session.close()

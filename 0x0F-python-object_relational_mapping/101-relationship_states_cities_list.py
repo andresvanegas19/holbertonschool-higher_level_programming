@@ -26,9 +26,8 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     Session.configure(bind=engine)
     session = Session()
 
-
     for state in session.query(State).order_by('id').all():
-        print('{}: {}'.format(state.id ,state.name))
+        print('{}: {}'.format(state.id, state.name))
         for city in state.cities:
             print('    {}: {}'.format(city.id, city.name))
 

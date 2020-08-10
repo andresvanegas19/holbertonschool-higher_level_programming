@@ -31,13 +31,12 @@ if __name__ == "__main__" and len(sys.argv) == 4:
 
     try:
         new_state = State(name='California')
-        new_city = City(name='San Francisco')
+        new_city = City(name='San Francisco', state_id='California')
+        # new_state.cities.append(new_city)
         session.add(new_state)
-        session.add(new_city)
 
         session.commit()
         session.flush()
-
 
     except exc.SQLAlchemyError as e:
         print(e)

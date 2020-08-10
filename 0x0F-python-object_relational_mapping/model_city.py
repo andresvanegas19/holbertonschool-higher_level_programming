@@ -8,8 +8,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from model_state import Base
 
-Base = declarative_base()
-
 
 class City(Base):
     """This is for a structure to save in Tables and use
@@ -27,6 +25,3 @@ class City(Base):
         Integer,
         ForeignKey('states.id'),
         nullable=False)
-    # # Relationships
-    # state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
-    # states = relationship("State", foreign_keys=id)

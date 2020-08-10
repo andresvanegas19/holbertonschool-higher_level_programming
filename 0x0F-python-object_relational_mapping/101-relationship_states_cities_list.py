@@ -26,13 +26,10 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     Session.configure(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by('id').all()
 
-    for state in states:
+    for state in session.query(State).order_by('id').all():
         print('{}: {}'.format(state.id ,state.name))
-        cities = session.query(City).filter(City.state_id == state.id) \
-            .order_by('id').all()
-        for city in cities:
+        for city in state.cities:
             print('    {}: {}'.format(city.id, city.name))
 
     session.close()

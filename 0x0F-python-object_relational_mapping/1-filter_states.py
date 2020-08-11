@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     query = """SELECT * FROM """ + sys.argv[3] + \
-        """.states WHERE name LIKE 'N%' ORDER BY id"""
+        """.states WHERE name COLLATE latin1_general_cs LIKE 'N%' ORDER BY id"""
     cur.execute(query)
     rows = cur.fetchall()
 

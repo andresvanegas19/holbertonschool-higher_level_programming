@@ -19,9 +19,8 @@ if __name__ == "__main__":
     cur = db.cursor()
     query = """SELECT * FROM """ + sys.argv[3] + """.states ORDER BY id"""
     cur.execute(query)
-    rows = cur.fetchall()
 
-    for row in rows:
+    for row in cur.fetchall():
         print(row)
 
     # This is for close

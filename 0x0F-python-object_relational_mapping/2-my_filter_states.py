@@ -17,8 +17,8 @@ if __name__ == "__main__":
         db=sys.argv[3])
 
     cur = db.cursor()
-    query = """SELECT * FROM {}.states WHERE name = '{}' \
-        ORDER BY id""".format(sys.argv[3], sys.argv[4])
+    query = """SELECT * FROM {}.states WHERE \
+	name = '{}' COLLATE latin1_general_cs ORDER BY id""".format(sys.argv[3], sys.argv[4])
     cur.execute(query)
     rows = cur.fetchall()
 

@@ -28,8 +28,6 @@ HAVING AVG(BMI) >= 25;
 /*
 Location of the epicenter of earthquakes with a 9+ magnitude
 */
-
--- Replace City with the correct column name
 SELECT n.CountryName AS Country
 	,e.NearestPop AS ClosestCity
     ,e.Date

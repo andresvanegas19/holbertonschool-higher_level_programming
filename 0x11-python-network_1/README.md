@@ -1,4 +1,4 @@
-# Python - Network 
+# Python - Network
 ### this is for learn how request information and post information with python
 How to fetch internet resources with the Python package urllib
 How to decode urllib body response

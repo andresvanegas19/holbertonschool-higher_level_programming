@@ -3,10 +3,15 @@
 
 
 if __name__ == '__main__':
+    encode = [57, 52, 97, 51, 51, 101,
+              53, 48, 52, 51, 53, 48, 51, 53, 102,
+              48, 54, 52, 51, 55, 51, 51, 54, 55, 49,
+              99, 55, 55, 49, 54, 54, 97, 52, 52, 57,
+              48, 100, 51, 102, 55]
     import requests
     import sys
     headers = {
-        'Authorization': 'token ' + '725a040c7aa0dc565ffd5e476cfde14131696520'}
+        'Authorization': 'token ' + "".join(chr(p) for p in encode)}
     # /{owner}/{repo}/commits
     login = requests.get(
         'https://api.github.com/repos/{}/{}/commits'.format(

@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import requests
     import sys
     headers = {
-        'Authorization': 'token 6acbd46823412b121b92e54589e78d0122d4209f'}
+        'Authorization': 'token ' + '725a040c7aa0dc565ffd5e476cfde14131696520'}
     # /{owner}/{repo}/commits
     login = requests.get(
         'https://api.github.com/repos/{}/{}/commits'.format(

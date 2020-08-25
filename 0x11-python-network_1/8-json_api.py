@@ -20,12 +20,13 @@ if __name__ == '__main__':
             print("Not a valid JSON")
         elif not result:
             print("No result")
-        else:
+        elif type(result) == dict and result:
             # [<id>] <name>
             print("[{}] {}".format(
                 result.get('id'),
                 result.get('name')))
+        else:
+            pass
 
     except requests.exceptions.RequestException as e:
-        # raise SystemExit(err)
         print("Error code: {}".format(e.__str__().split()[0]))

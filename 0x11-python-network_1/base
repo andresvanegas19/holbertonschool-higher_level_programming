@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+""" This script fetch information with the library urllib """
+
+
+if __name__ == '__main__':
+     a = ""
+
+     print(isinstance(a, dict))
+     exit
+     print('a')

@@ -1,0 +1,62 @@
+{
+    'author': {
+        'gravatar_id': '',
+        'site_admin': False,
+        'received_events_url': 'https://api.github.com/users/composerinteralia/received_events',
+        'followers_url': 'https://api.github.com/users/composerinteralia/followers',
+        'avatar_url': 'https://avatars3.githubusercontent.com/u/13696143?v=4',
+        'id': 13696143,
+        'repos_url': 'https://api.github.com/users/composerinteralia/repos',
+        'events_url': 'https://api.github.com/users/composerinteralia/events{/privacy}',
+        'type': 'User',
+        'login': 'composerinteralia',
+        'subscriptions_url': 'https://api.github.com/users/composerinteralia/subscriptions',
+        'following_url': 'https://api.github.com/users/composerinteralia/following{/other_user}',
+        'url': 'https://api.github.com/users/composerinteralia',
+        'node_id': 'MDQ6VXNlcjEzNjk2MTQz',
+        'organizations_url': 'https://api.github.com/users/composerinteralia/orgs',
+        'html_url': 'https://github.com/composerinteralia',
+        'starred_url': 'https://api.github.com/users/composerinteralia/starred{/owner}{/repo}',
+        'gists_url': 'https://api.github.com/users/composerinteralia/gists{/gist_id}'
+    },
+    'url': 'https://api.github.com/repos/rails/rails/commits/d5fb2ceeb24d8002590fe2f815c45db8cb282718',
+    'parents': [{
+        'sha': '35a103a96e4879df1b84062fa2ac6aa9d97ded71',
+        'html_url': 'https://github.com/rails/rails/commit/35a103a96e4879df1b84062fa2ac6aa9d97ded71',
+        'url': 'https://api.github.com/repos/rails/rails/commits/35a103a96e4879df1b84062fa2ac6aa9d97ded71'
+    }, {
+        'sha': '714f8c80684b087b14252f0c70df2e78aa72132b',
+        'html_url': 'https://github.com/rails/rails/commit/714f8c80684b087b14252f0c70df2e78aa72132b',
+        'url': 'https://api.github.com/repos/rails/rails/commits/714f8c80684b087b14252f0c70df2e78aa72132b'
+    }],
+    'comments_url': 'https://api.github.com/repos/rails/rails/commits/d5fb2ceeb24d8002590fe2f815c45db8cb282718/comments',
+    'sha': 'd5fb2ceeb24d8002590fe2f815c45db8cb282718',
+    'committer': { 'gravatar_id': '', 'site_admin': False, 'received_events_url': 'https://api.github.com/users/web-flow/received_events', 'followers_url': 'https://api.github.com/users/web-flow/followers', 'avatar_url': 'https://avatars3.githubusercontent.com/u/19864447?v=4', 'id': 19864447, 'repos_url': 'https://api.github.com/users/web-flow/repos', 'events_url': 'https://api.github.com/users/web-flow/events{/privacy}', 'type': 'User', 'login': 'web-flow', 'subscriptions_url': 'https://api.github.com/users/web-flow/subscriptions', 'following_url': 'https://api.github.com/users/web-flow/following{/other_user}', 'url': 'https://api.github.com/users/web-flow', 'node_id': 'MDQ6VXNlcjE5ODY0NDQ3', 'organizations_url': 'https://api.github.com/users/web-flow/orgs', 'html_url': 'https://github.com/web-flow', 'starred_url': 'https://api.github.com/users/web-flow/starred{/owner}{/repo}', 'gists_url': 'https://api.github.com/users/web-flow/gists{/gist_id}' },
+    'html_url': 'https://github.com/rails/rails/commit/d5fb2ceeb24d8002590fe2f815c45db8cb282718',
+    'commit': {
+        'author': {
+            'name': 'Daniel Colson',
+            'date': '2020-08-24T16:32:17Z',
+            'email': 'danieljamescolson@gmail.com'
+        },
+        'url': 'https://api.github.com/repos/rails/rails/git/commits/d5fb2ceeb24d8002590fe2f815c45db8cb282718',
+        'verification': {
+            'signature': '-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfQ+uSCRBK7hj4Ov3rIwAAdHIIAEx5YAgDtGrKDmEc5ufNA5eM\nT5TtQ7DR7WYJHpIEZUxDIaCnKHMEfMMqk9lYO+NYoyVZPEEkWEIajvaYDqMb58jY\nH0MqYGZww8gSUcgK47aVaNJVMrwMCZVwvEFKwUcLLjswk36dQDi32YOcRk8uMJfo\nFTxp406xd2Yy+3RgTcfIfLEnNfJPGWQ26kLJ5ZXUswn2rF575ABya5nesDgbXQXL\nKgPimhevCOHMwUhqIJXH8cHRX+de+athBkXVvAE8EY6QvQ2jA9gBe4T+k3rEiQ9m\nUuFfhQuitWLGNYhIwNm9W6PZripu+Ss3+I/cEkN4jhprReDsEy9x2hu/0TLgnz8=\n=t7L2\n-----END PGP SIGNATURE-----\n',
+            'verified': True,
+            'reason': 'valid',
+            'payload': 'tree 4a994f01d83fb7bb4bc2f739be4589d919dc7aec\nparent 35a103a96e4879df1b84062fa2ac6aa9d97ded71\nparent 714f8c80684b087b14252f0c70df2e78aa72132b\nauthor Daniel Colson <danieljamescolson@gmail.com> 1598286737 -0400\ncommitter GitHub <noreply@github.com> 1598286737 -0400\n\nMerge pull request #40099 from abhaynikam/document-other-than-accept-proc-symbol\n\nDocuments other_than option for numericality validation [skip ci]'
+        },
+        'committer': {
+            'name': 'GitHub',
+            'date': '2020-08-24T16:32:17Z',
+            'email': 'noreply@github.com'
+        },
+        'tree': {
+            'sha': '4a994f01d83fb7bb4bc2f739be4589d919dc7aec',
+            'url': 'https://api.github.com/repos/rails/rails/git/trees/4a994f01d83fb7bb4bc2f739be4589d919dc7aec'
+        },
+        'comment_count': 0,
+        'message': 'Merge pull request #40099 from abhaynikam/document-other-than-accept-proc-symbol\n\nDocuments other_than option for numericality validation [skip ci]'
+    },
+    'node_id': 'MDY6Q29tbWl0ODUxNDpkNWZiMmNlZWIyNGQ4MDAyNTkwZmUyZjgxNWM0NWRiOGNiMjgyNzE4'
+}

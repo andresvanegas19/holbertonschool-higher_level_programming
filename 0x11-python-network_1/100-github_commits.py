@@ -17,8 +17,12 @@ if __name__ == '__main__':
         'https://api.github.com/repos/{}/{}/commits'.format(
                 sys.argv[1], sys.argv[2]), headers=headers)
 
-    for commit in range(10):
-        information = login.json()[commit]
+    i = 0
+    for commit in login.json():
+        i += 1
+        if i == 10:
+            break
+        information = [commit]
         print("{}: {}".format(
             information.get('sha'),
             information.get('commit').get("author").get("name")

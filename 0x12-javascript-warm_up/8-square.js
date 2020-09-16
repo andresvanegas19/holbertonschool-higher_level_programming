@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 if (isNaN(process.argv[2]) === false && process.argv.length > 2) {
   const total = Number(process.argv[2]);

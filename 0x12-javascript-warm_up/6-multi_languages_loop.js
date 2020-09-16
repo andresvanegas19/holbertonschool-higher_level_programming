@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const phrases = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 

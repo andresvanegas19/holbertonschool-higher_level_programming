@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const factorial = (number) => {
   if (number === 0 || number === 1) {

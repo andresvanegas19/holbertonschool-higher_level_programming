@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 if (isNaN(process.argv[2]) === false && process.argv.length > 2) {
   console.log(`My number: ${process.argv[2]}`);

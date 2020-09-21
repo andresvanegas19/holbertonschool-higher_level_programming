@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-const Rectangle = require("./2-rectangle");
-
 module.exports = class Rectangle {
   constructor (w, h) {
     if ((w !== 0 && w > 0) && (h !== 0 && h > 0)) {
@@ -19,4 +17,12 @@ module.exports = class Rectangle {
     };
   }
 
+  rotate() {
+    [this.width, this.height] = [this.height, this.width];
+  }
+
+  double() {
+    this.width = this.width * 2;
+    this.height = this.height * 2;
+  }
 };

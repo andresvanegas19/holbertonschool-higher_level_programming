@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-function Rectangle() {}
+module.exports = class Rectangle {
+  constructor() {}
+}
 
-module.exports.Rectangle = Rectangle;

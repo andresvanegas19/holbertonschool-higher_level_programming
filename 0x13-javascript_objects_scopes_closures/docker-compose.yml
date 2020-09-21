@@ -3,7 +3,7 @@ version: '3'
 
 services:
     core-api:
-        image: 'node:8.12.0-alpine'
+        image: 'node:12.18.4-alpine3.11'
         working_dir: '/home/core-api'
         container_name: 'test'
         volumes:

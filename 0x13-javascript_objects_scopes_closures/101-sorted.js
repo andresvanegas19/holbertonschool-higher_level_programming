@@ -2,12 +2,13 @@
 
 const dict = require('./101-data.js').dict;
 
-let new_dict = {}
+const newDict = {};
 
-for (let entry in dict) {
-  if (!new_dict.hasOwnProperty(dict[entry])) {
-    new_dict[dict[entry]] = []
+for (const entry in dict) {
+  if (!newDict.hasOwnProperty.call(dict[entry])) {
+    newDict[dict[entry]] = [];
   }
-  new_dict[dict[entry]].push(entry)
+  newDict[dict[entry]].push(entry);
 }
-console.log(new_dict)
+
+console.log(newDict);

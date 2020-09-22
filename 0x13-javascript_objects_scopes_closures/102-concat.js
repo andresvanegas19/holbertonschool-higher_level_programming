@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const { exit, cwd, argv } = require('process');
 const fs = require('fs');
 

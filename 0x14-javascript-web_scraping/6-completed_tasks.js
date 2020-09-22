@@ -10,17 +10,19 @@ const options = {
     }
 };
 
-const wedgeAntilles = 'https://swapi-api.hbtn.io/api/people/18/';
 request(options, function(err, res, body) {
-  let total = 0;
   const result = JSON.parse(body)
+  const dict = {};
 
-  result.results.forEach(element => {
-    // console.log(element.characters)
-    if (element.characters.indexOf(wedgeAntilles) > -1) {
-      total++;
+  result.forEach(element => {
+    let userId = element['userId']
+    if (!dict[userId]) {
+      dict[userId] = 0
+    }
+
+    if (element['completed'] === true) {
+      dict[userId] += 1
     }
   });
-  console.log(total);
+  console.log(dict)
 });
-

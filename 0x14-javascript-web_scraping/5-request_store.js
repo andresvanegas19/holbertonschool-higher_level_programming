@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const request = require('request');
 const { argv } = require('process');
+const fs = require('fs');
 
 const options = {
     url: argv[2],
@@ -11,6 +12,9 @@ const options = {
 };
 
 request(options, function(err, res, body) {
-  const result = JSON.parse(body)
-  console.log(result)
+  fs.writeFile(argv[3], body, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
 });

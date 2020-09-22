@@ -10,7 +10,9 @@ const options = {
   }
 };
 
-request(options, function(err, res, body) {
-  const result = JSON.parse(body).title
-  console.log(result)
+request(options, function (err, res, body) {
+  if (err) throw err;
+
+  const result = JSON.parse(body).title;
+  console.log(result);
 });

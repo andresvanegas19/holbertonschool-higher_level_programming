@@ -1,32 +1,27 @@
-#!/usr/bin/node
-const { exit, cwd, argv } = require('process');
+#!/usr/bin/env nodejs
+const { argv } = require('process');
 const fs = require('fs');
 
-if (argv.length !== 5) {
-  exit(0);
-}
-
-const path = cwd() + '/';
-const fileA = path + argv[2];
-const fileB = path + argv[3];
+const fileA = argv[2];
+const fileB = argv[3];
 
 const resFileA = fs.readFileSync(fileA, function (err) {
   if (err) {
     return console.log(err);
   }
-}).toString()
-  .replace(/(\r\n|\n|\r)/gm, '');
+});
 
 const resFileB = fs.readFileSync(fileB, function (err) {
   if (err) {
     return console.log(err);
   }
-}).toString()
-  .replace(/(\r\n|\n|\r)/gm, '');
+});
 
-const total = resFileA + '\n' + resFileB + '\n';
+const total = resFileA + resFileB;
 
-fs.writeFile(path + argv[4], total, function (err) {
+console.log(total)
+
+fs.writeFile(argv[4], total, function (err) {
   if (err) {
     return console.log(err);
   }

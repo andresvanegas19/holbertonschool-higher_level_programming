@@ -1,4 +1,4 @@
-#!/usr/bin/env nodejs
+#!/usr/bin/node
 const { argv } = require('process');
 const fs = require('fs');
 
@@ -18,8 +18,6 @@ const resFileB = fs.readFileSync(fileB, function (err) {
 });
 
 const total = resFileA + resFileB;
-
-console.log(total)
 
 fs.writeFile(argv[4], total, function (err) {
   if (err) {

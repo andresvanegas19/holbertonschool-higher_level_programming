@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 const request = require('request');
-const { argv, exit } = require('process');
+const { argv } = require('process');
 
 const options = {
-    url: argv[2],
+    url: `https://swapi-api.hbtn.io/api/films/${argv[2]}`,
     method: 'GET',
     headers: {
         'Accept-Charset': 'utf-8',
@@ -11,7 +11,5 @@ const options = {
 };
 
 request(options, function(err, res, body) {
-  if (res) {
-   console.log('code: %d', res.statusCode);
-  }
+  console.log(JSON.parse(body)['title'])
 });

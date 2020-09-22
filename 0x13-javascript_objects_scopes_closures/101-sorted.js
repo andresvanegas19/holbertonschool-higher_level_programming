@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-const list = require('./100-data.js').list;
+const dict = require('./101-data.js').dict;
 
-console.log(list)
+let new_dict = {}
 
-let new_list = list.map((element, index) => {
-  return element * index
-})
-
-console.log(new_list)
+for (let entry in dict) {
+  if (!new_dict.hasOwnProperty(dict[entry])) {
+    new_dict[dict[entry]] = []
+  }
+  new_dict[dict[entry]].push(entry)
+}
+console.log(new_dict)

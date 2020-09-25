@@ -1,1 +1,2 @@
-document.getElementById("head").style.color = "#ff0000";
+
+document.querySelector('HEADER').style.color = '#FF0000';

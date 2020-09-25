@@ -1,1 +1,3 @@
-$('').prepend("<li>Item</li>");
+$('DIV#add_item').click(function() {
+  $('UL.my_list').prepend("<li>Item</li>");
+});
